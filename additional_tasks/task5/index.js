@@ -1,27 +1,33 @@
 import './index.css';
+import StartProject from './src/start';
 
-class CreateForm {   
+const startProject = new StartProject();
+startProject.render();
 
-   constructor(){
-      this.inputDonatForm = document.querySelector('.donate-form__donate-input');
-      this.inputDonatContainer = document.querySelector('.donates-container__donates');
-      this.bNumber = document.querySelectorAll('b');  
+// localStorage.clear();
+
+// class CreateForm {   
+
+//    constructor(){
+//       this.inputDonatForm = document.querySelector('.donate-form__donate-input');
+//       this.inputDonatContainer = document.querySelector('.donates-container__donates');
+//       this.bNumber = document.querySelectorAll('b');  
          
-   }
+//    }
 
-   createDivListDonate(number){
-      const createDivContainer = document.createElement('div');
-      createDivContainer.classList = 'donate-item';
-      createDivContainer.textContent = new Date().toUTCString();
-      this.inputDonatContainer.append(createDivContainer);
+//    createDivListDonate(number){
+//       const createDivContainer = document.createElement('div');
+//       createDivContainer.classList = 'donate-item';
+//       createDivContainer.textContent = new Date().toUTCString();
+//       this.inputDonatContainer.append(createDivContainer);
 
-      const createBSum = document.createElement('b');
-      createBSum.textContent = `- ${number}$`;
-      createDivContainer.append(createBSum);
+//       const createBSum = document.createElement('b');
+//       createBSum.textContent = `- ${number}$`;
+//       createDivContainer.append(createBSum);
 
-      return createDivContainer;
-   }
-}
+//       return createDivContainer;
+//    }
+// }
 
 // const inputDonatForm = document.querySelector('.donate-form__donate-input');
 // const inputDonatContainer = document.querySelector('.donates-container__donates');
@@ -49,65 +55,65 @@ class CreateForm {
 //    return createDivContainer;
 // }
 
-class ButtonClick extends CreateForm {
-   #buttonDonatSubmit  
-   #numberDonate  
-   #totalNumberSum 
+// class ButtonClick extends CreateForm {
+//    #buttonDonatSubmit  
+//    #numberDonate  
+//    #totalNumberSum 
 
-   constructor(){
-      super();
-      this.#buttonDonatSubmit = document.querySelector('.donate-form__submit-button');
-      this.#numberDonate = 0;      
-      this.resultBNumber = 0; 
-      this.#totalNumberSum = document.querySelector('#total-amount');  
-   }
+//    constructor(){
+//       super();
+//       this.#buttonDonatSubmit = document.querySelector('.donate-form__submit-button');
+//       this.#numberDonate = 0;      
+//       this.resultBNumber = 0; 
+//       this.#totalNumberSum = document.querySelector('#total-amount');  
+//    }
 
-   returnNumber(){
-      for(let i = 0; i < this.bNumber.length; i++){
-         this.resultBNumber += Number(this.bNumber[i].textContent);        
-      } 
-      return this.resultBNumber;      
-   }
+//    returnNumber(){
+//       for(let i = 0; i < this.bNumber.length; i++){
+//          this.resultBNumber += Number(this.bNumber[i].textContent);        
+//       } 
+//       return this.resultBNumber;      
+//    }
 
-   buttonClick(){
-      this.resultBNumber = this.returnNumber();
+//    buttonClick(){
+//       this.resultBNumber = this.returnNumber();
 
-      this.#buttonDonatSubmit.addEventListener('click', (event) => {
-         event.preventDefault();
-         this.#numberDonate = Number(this.inputDonatForm.value);
-         this.inputDonatContainer.append(this.createDivListDonate(this.#numberDonate));           
+//       this.#buttonDonatSubmit.addEventListener('click', (event) => {
+//          event.preventDefault();
+//          this.#numberDonate = Number(this.inputDonatForm.value);
+//          this.inputDonatContainer.append(this.createDivListDonate(this.#numberDonate));           
          
-         this.resultBNumber += this.#numberDonate;    
-         this.#totalNumberSum.textContent = `${this.resultBNumber}$`;
+//          this.resultBNumber += this.#numberDonate;    
+//          this.#totalNumberSum.textContent = `${this.resultBNumber}$`;
 
-         this.inputDonatForm.value = '';
-      })   
-   }
-}
+//          this.inputDonatForm.value = '';
+//       })   
+//    }
+// }
 
-class CreateObject extends CreateForm {
-   #objNumber
-   #objFunction
+// class CreateObject extends CreateForm {
+//    #objNumber
+//    #objFunction
 
-   constructor(){
-      super();
-      this.#objNumber = 0;
-      this.#objFunction = {}
-   }
+//    constructor(){
+//       super();
+//       this.#objNumber = 0;
+//       this.#objFunction = {}
+//    }
 
-   idText(){
-      for(let i = 0; i < this.bNumber.length; i++){
-         this.#objNumber = this.bNumber[i].textContent;
-      }
-   }
+//    idText(){
+//       for(let i = 0; i < this.bNumber.length; i++){
+//          this.#objNumber = this.bNumber[i].textContent;
+//       }
+//    }
 
-   createObject(objNumber){     
-      return this.#objFunction = { 
-               date: new Date().toUTCString(),
-               number: this.#objNumber,
-            }
-   }
-}
+//    createObject(objNumber){     
+//       return this.#objFunction = { 
+//                date: new Date().toUTCString(),
+//                number: this.#objNumber,
+//             }
+//    }
+// }
 
   
 
@@ -126,12 +132,5 @@ class CreateObject extends CreateForm {
 
 //localStorage.setItem('donate', JSON.stringify(obj(objNumber)));//????????????
 
-
-const createForm = new CreateForm();
-
-const buttonClick = new ButtonClick();
-buttonClick.buttonClick();
-
-const createObjectClass = new CreateObject();
-createObjectClass.idText();
-createObjectClass.createObject();
+// const buttonClick = new ButtonClick();
+// buttonClick.buttonClick();
