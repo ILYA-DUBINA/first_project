@@ -1,4 +1,5 @@
 import { CreateForm } from "./createForm";
+import StartProject from "../start";
 
 export class ButtonClick extends CreateForm {
    #buttonDonatSubmit  
@@ -13,26 +14,30 @@ export class ButtonClick extends CreateForm {
       this.resultBNumber = 0;      
       this.#totalNumberSum = document.querySelector('#total-amount');
       this.#objFunction = {};        
-      this.array = [];        
+      this.array = [];    
    }
 
-   returnNumber(){
-      for(let i = 0; i < this.bNumber.length; i++){
-         this.resultBNumber += Number(this.bNumber[i].textContent);        
-      } 
-      return this.resultBNumber;      
-   }
+   // returnNumber(){
+   //    for(let i = 0; i < this.bNumber.length; i++){
+   //       this.resultBNumber += Number(this.bNumber[i].textContent);        
+   //    } 
+   //    return this.resultBNumber;      
+   // }
 
    buttonClick(){
-      this.resultBNumber = this.returnNumber();
+      let startProject = new StartProject();     
+      this.resultBNumber = startProject.returnNumber();
+      // console.log(this.resultBNumber);
 
       this.#buttonDonatSubmit.addEventListener('click', (event) => {
          event.preventDefault();
-         this.#numberDonate = Number(this.inputDonatForm.value);
-         this.inputDonatContainer.append(this.createDivListDonate(this.#numberDonate));           
+         this.#numberDonate = Number(this.inputDonatForm.value);     
+         this.inputDonatContainer.append(this.createDivListDonate(this.#numberDonate));                    
          
-         this.resultBNumber += this.#numberDonate;    
+         console.log(this.resultBNumber);
          this.#totalNumberSum.textContent = `${this.resultBNumber}$`;
+         this.resultBNumber += this.#numberDonate;    
+         
     
          this.setLocalStorage();
          this.inputDonatForm.value = '';
@@ -52,6 +57,10 @@ export class ButtonClick extends CreateForm {
    getLocalStorage(){
       const donate = localStorage.getItem('donate');
       const showDonate = JSON.parse(donate);
+      console.log(showDonate);
+      showDonate.forEach((item) => {
+         console.log(item.number);
+      })
       return showDonate;
    }
 }

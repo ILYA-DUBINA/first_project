@@ -3,13 +3,23 @@ import { ButtonClick } from "./donateForm/clickButton";
 // import { CreateObject } from "./donateForm/createObject";
 
 export default class StartProject {
-   constructor(){
+   constructor(){   
       this.createForm = new CreateForm();
       this.buttonClick = new ButtonClick();
-      // this.createObject = new CreateObject();
+      this.resultBNumber = 0;
    }
 
    render(){
-      this.buttonClick.buttonClick();
+      this.buttonClick.buttonClick();         
+   }   
+
+   returnNumber(){      
+      this.buttonClick.createLocalStorage();
+      let bNumber = document.querySelectorAll('b');     
+      for(let i = 0; i < bNumber.length; i++){     
+         this.resultBNumber += Number(bNumber[i].textContent);        
+      }
+      // console.log(this.resultBNumber);
+      return this.resultBNumber;   
    }
 }
