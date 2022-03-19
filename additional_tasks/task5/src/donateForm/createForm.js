@@ -31,6 +31,10 @@ export class CreateForm {
          createBSum.innerHTML = item.number;               
          createDivContainer.append(createBSum);
 
+         const createBSumTwo = document.createElement('span');   
+         createBSumTwo.textContent = '$';               
+         createDivContainer.append(createBSumTwo);
+
          return createDivContainer;   
       })   
    }

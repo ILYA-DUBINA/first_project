@@ -3,8 +3,7 @@ import StartProject from "../start";
 
 export class ButtonClick extends CreateForm {
    #buttonDonatSubmit  
-   #numberDonate  
-   #totalNumberSum 
+   #numberDonate 
    #objFunction
 
    constructor(){
@@ -12,22 +11,14 @@ export class ButtonClick extends CreateForm {
       this.#buttonDonatSubmit = document.querySelector('.donate-form__submit-button');
       this.#numberDonate = 0;      
       this.resultBNumber = 0;      
-      this.#totalNumberSum = document.querySelector('#total-amount');
+      this.totalNumberSum = document.querySelector('#total-amount');
       this.#objFunction = {};        
       this.array = [];    
    }
 
-   // returnNumber(){
-   //    for(let i = 0; i < this.bNumber.length; i++){
-   //       this.resultBNumber += Number(this.bNumber[i].textContent);        
-   //    } 
-   //    return this.resultBNumber;      
-   // }
-
    buttonClick(){
       let startProject = new StartProject();     
       this.resultBNumber = startProject.returnNumber();
-      // console.log(this.resultBNumber);
 
       this.#buttonDonatSubmit.addEventListener('click', (event) => {
          event.preventDefault();
@@ -35,9 +26,8 @@ export class ButtonClick extends CreateForm {
          this.inputDonatContainer.append(this.createDivListDonate(this.#numberDonate));                    
          
          console.log(this.resultBNumber);
-         this.#totalNumberSum.textContent = `${this.resultBNumber}$`;
-         this.resultBNumber += this.#numberDonate;    
-         
+         this.resultBNumber += this.#numberDonate;
+         this.totalNumberSum.textContent = `${this.resultBNumber}$`;                      
     
          this.setLocalStorage();
          this.inputDonatForm.value = '';
