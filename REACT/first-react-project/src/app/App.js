@@ -1,21 +1,11 @@
 import React, { useState } from "react";
+import api from "./api";
+import SearchStatus from "./components/searchStatus";
 import Users from "./components/users";
-import SerchStatus from "./components/searchStatus";
-import API from "./api";
-import renderPhrase from "./components/searchStatus";
 import "bootstrap/dist/css/bootstrap.css";
 
 function App() {
    const [users, setUsers] = useState(api.users.fetchAll());
-
-   const createTableThead = () => {  
-      const keysAllObject = Object.keys(users[0]);   
-            delete keysAllObject[0];  
-            delete keysAllObject[keysAllObject.length-1];  
-      return keysAllObject.map((prevState, keys) => (               
-               <th scope="col" key={keys}>{prevState}</th>
-            )); 
-   } 
 
    const deleteHandler = (id) => {
       setUsers(users.filter((item) => item._id !== id));      
@@ -37,15 +27,14 @@ function App() {
    }
    
    return (
-      <>  
-         <h2>
-            {renderPhrase()}
-         </h2>
+      <>           
+         <SearchStatus length={users.length} />      
+          
          {users.length > 0 &&
             <table className="table table-striped">
                <thead>
                   <tr>
-                     {createTableThead()}
+                     <Users users={users}/>                 
                   </tr>
                </thead>
                <tbody>

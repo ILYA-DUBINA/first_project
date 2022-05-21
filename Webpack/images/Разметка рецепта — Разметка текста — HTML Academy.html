@@ -1,0 +1,990 @@
+<!DOCTYPE html>
+<!-- saved from url=(0046)https://htmlacademy.ru/courses/301/challenge/2 -->
+<html lang="ru" class="no-touch js"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><style id="error_marker.css">    .error_widget_wrapper {        background: inherit;        color: inherit;        border:none    }    .error_widget {        border-top: solid 2px;        border-bottom: solid 2px;        margin: 5px 0;        padding: 10px 40px;        white-space: pre-wrap;    }    .error_widget.ace_error, .error_widget_arrow.ace_error{        border-color: #ff5a5a    }    .error_widget.ace_warning, .error_widget_arrow.ace_warning{        border-color: #F1D817    }    .error_widget.ace_info, .error_widget_arrow.ace_info{        border-color: #5a5a5a    }    .error_widget.ace_ok, .error_widget_arrow.ace_ok{        border-color: #5aaa5a    }    .error_widget_arrow {        position: absolute;        border: solid 5px;        border-top-color: transparent!important;        border-right-color: transparent!important;        border-left-color: transparent!important;        top: -5px;    }
+/*# sourceURL=ace/css/error_marker.css */</style><style id="ace-tm">.ace-tm .ace_gutter {background: #f0f0f0;color: #333;}.ace-tm .ace_print-margin {width: 1px;background: #e8e8e8;}.ace-tm .ace_fold {background-color: #6B72E6;}.ace-tm {background-color: #FFFFFF;color: black;}.ace-tm .ace_cursor {color: black;}.ace-tm .ace_invisible {color: rgb(191, 191, 191);}.ace-tm .ace_storage,.ace-tm .ace_keyword {color: blue;}.ace-tm .ace_constant {color: rgb(197, 6, 11);}.ace-tm .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ace-tm .ace_constant.ace_language {color: rgb(88, 92, 246);}.ace-tm .ace_constant.ace_library {color: rgb(6, 150, 14);}.ace-tm .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ace-tm .ace_support.ace_function {color: rgb(60, 76, 114);}.ace-tm .ace_support.ace_constant {color: rgb(6, 150, 14);}.ace-tm .ace_support.ace_type,.ace-tm .ace_support.ace_class {color: rgb(109, 121, 222);}.ace-tm .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ace-tm .ace_string {color: rgb(3, 106, 7);}.ace-tm .ace_comment {color: rgb(76, 136, 107);}.ace-tm .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ace-tm .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ace-tm .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ace-tm .ace_variable {color: rgb(49, 132, 149);}.ace-tm .ace_xml-pe {color: rgb(104, 104, 91);}.ace-tm .ace_entity.ace_name.ace_function {color: #0000A2;}.ace-tm .ace_heading {color: rgb(12, 7, 255);}.ace-tm .ace_list {color:rgb(185, 6, 144);}.ace-tm .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ace-tm .ace_string.ace_regex {color: rgb(255, 0, 0)}.ace-tm .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ace-tm.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ace-tm .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ace-tm .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ace-tm .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ace-tm .ace_marker-layer .ace_active-line {background: rgba(0, 0, 0, 0.07);}.ace-tm .ace_gutter-active-line {background-color : #dcdcdc;}.ace-tm .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ace-tm .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}
+/*# sourceURL=ace/css/ace-tm */</style><style id="ace_editor.css">.ace_br1 {border-top-left-radius    : 3px;}.ace_br2 {border-top-right-radius   : 3px;}.ace_br3 {border-top-left-radius    : 3px; border-top-right-radius:    3px;}.ace_br4 {border-bottom-right-radius: 3px;}.ace_br5 {border-top-left-radius    : 3px; border-bottom-right-radius: 3px;}.ace_br6 {border-top-right-radius   : 3px; border-bottom-right-radius: 3px;}.ace_br7 {border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px;}.ace_br8 {border-bottom-left-radius : 3px;}.ace_br9 {border-top-left-radius    : 3px; border-bottom-left-radius:  3px;}.ace_br10{border-top-right-radius   : 3px; border-bottom-left-radius:  3px;}.ace_br11{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-left-radius:  3px;}.ace_br12{border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br13{border-top-left-radius    : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br14{border-top-right-radius   : 3px; border-bottom-right-radius: 3px; border-bottom-left-radius:  3px;}.ace_br15{border-top-left-radius    : 3px; border-top-right-radius:    3px; border-bottom-right-radius: 3px; border-bottom-left-radius: 3px;}.ace_editor {position: relative;overflow: hidden;padding: 0;font: 12px/normal 'Monaco', 'Menlo', 'Ubuntu Mono', 'Consolas', 'source-code-pro', monospace;direction: ltr;text-align: left;-webkit-tap-highlight-color: rgba(0, 0, 0, 0);}.ace_scroller {position: absolute;overflow: hidden;top: 0;bottom: 0;background-color: inherit;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;cursor: text;}.ace_content {position: absolute;box-sizing: border-box;min-width: 100%;contain: style size layout;font-variant-ligatures: no-common-ligatures;}.ace_dragging .ace_scroller:before{position: absolute;top: 0;left: 0;right: 0;bottom: 0;content: '';background: rgba(250, 250, 250, 0.01);z-index: 1000;}.ace_dragging.ace_dark .ace_scroller:before{background: rgba(0, 0, 0, 0.01);}.ace_selecting, .ace_selecting * {cursor: text !important;}.ace_gutter {position: absolute;overflow : hidden;width: auto;top: 0;bottom: 0;left: 0;cursor: default;z-index: 4;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;contain: style size layout;}.ace_gutter-active-line {position: absolute;left: 0;right: 0;}.ace_scroller.ace_scroll-left {box-shadow: 17px 0 16px -16px rgba(0, 0, 0, 0.4) inset;}.ace_gutter-cell {position: absolute;top: 0;left: 0;right: 0;padding-left: 19px;padding-right: 6px;background-repeat: no-repeat;}.ace_gutter-cell.ace_error {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAABOFBMVEX/////////QRswFAb/Ui4wFAYwFAYwFAaWGAfDRymzOSH/PxswFAb/SiUwFAYwFAbUPRvjQiDllog5HhHdRybsTi3/Tyv9Tir+Syj/UC3////XurebMBIwFAb/RSHbPx/gUzfdwL3kzMivKBAwFAbbvbnhPx66NhowFAYwFAaZJg8wFAaxKBDZurf/RB6mMxb/SCMwFAYwFAbxQB3+RB4wFAb/Qhy4Oh+4QifbNRcwFAYwFAYwFAb/QRzdNhgwFAYwFAbav7v/Uy7oaE68MBK5LxLewr/r2NXewLswFAaxJw4wFAbkPRy2PyYwFAaxKhLm1tMwFAazPiQwFAaUGAb/QBrfOx3bvrv/VC/maE4wFAbRPBq6MRO8Qynew8Dp2tjfwb0wFAbx6eju5+by6uns4uH9/f36+vr/GkHjAAAAYnRSTlMAGt+64rnWu/bo8eAA4InH3+DwoN7j4eLi4xP99Nfg4+b+/u9B/eDs1MD1mO7+4PHg2MXa347g7vDizMLN4eG+Pv7i5evs/v79yu7S3/DV7/498Yv24eH+4ufQ3Ozu/v7+y13sRqwAAADLSURBVHjaZc/XDsFgGIBhtDrshlitmk2IrbHFqL2pvXf/+78DPokj7+Fz9qpU/9UXJIlhmPaTaQ6QPaz0mm+5gwkgovcV6GZzd5JtCQwgsxoHOvJO15kleRLAnMgHFIESUEPmawB9ngmelTtipwwfASilxOLyiV5UVUyVAfbG0cCPHig+GBkzAENHS0AstVF6bacZIOzgLmxsHbt2OecNgJC83JERmePUYq8ARGkJx6XtFsdddBQgZE2nPR6CICZhawjA4Fb/chv+399kfR+MMMDGOQAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: 2px center;}.ace_gutter-cell.ace_warning {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAMAAAAoLQ9TAAAAmVBMVEX///8AAAD///8AAAAAAABPSzb/5sAAAAB/blH/73z/ulkAAAAAAAD85pkAAAAAAAACAgP/vGz/rkDerGbGrV7/pkQICAf////e0IsAAAD/oED/qTvhrnUAAAD/yHD/njcAAADuv2r/nz//oTj/p064oGf/zHAAAAA9Nir/tFIAAAD/tlTiuWf/tkIAAACynXEAAAAAAAAtIRW7zBpBAAAAM3RSTlMAABR1m7RXO8Ln31Z36zT+neXe5OzooRDfn+TZ4p3h2hTf4t3k3ucyrN1K5+Xaks52Sfs9CXgrAAAAjklEQVR42o3PbQ+CIBQFYEwboPhSYgoYunIqqLn6/z8uYdH8Vmdnu9vz4WwXgN/xTPRD2+sgOcZjsge/whXZgUaYYvT8QnuJaUrjrHUQreGczuEafQCO/SJTufTbroWsPgsllVhq3wJEk2jUSzX3CUEDJC84707djRc5MTAQxoLgupWRwW6UB5fS++NV8AbOZgnsC7BpEAAAAABJRU5ErkJggg==");background-position: 2px center;}.ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAAAAAA6mKC9AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAAJ0Uk5TAAB2k804AAAAPklEQVQY02NgIB68QuO3tiLznjAwpKTgNyDbMegwisCHZUETUZV0ZqOquBpXj2rtnpSJT1AEnnRmL2OgGgAAIKkRQap2htgAAAAASUVORK5CYII=");background-position: 2px center;}.ace_dark .ace_gutter-cell.ace_info {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQBAMAAADt3eJSAAAAJFBMVEUAAAChoaGAgIAqKiq+vr6tra1ZWVmUlJSbm5s8PDxubm56enrdgzg3AAAAAXRSTlMAQObYZgAAAClJREFUeNpjYMAPdsMYHegyJZFQBlsUlMFVCWUYKkAZMxZAGdxlDMQBAG+TBP4B6RyJAAAAAElFTkSuQmCC");}.ace_scrollbar {contain: strict;position: absolute;right: 0;bottom: 0;z-index: 6;}.ace_scrollbar-inner {position: absolute;cursor: text;left: 0;top: 0;}.ace_scrollbar-v{overflow-x: hidden;overflow-y: scroll;top: 0;}.ace_scrollbar-h {overflow-x: scroll;overflow-y: hidden;left: 0;}.ace_print-margin {position: absolute;height: 100%;}.ace_text-input {position: absolute;z-index: 0;width: 0.5em;height: 1em;opacity: 0;background: transparent;-moz-appearance: none;appearance: none;border: none;resize: none;outline: none;overflow: hidden;font: inherit;padding: 0 1px;margin: 0 -1px;contain: strict;-ms-user-select: text;-moz-user-select: text;-webkit-user-select: text;user-select: text;white-space: pre!important;}.ace_text-input.ace_composition {background: transparent;color: inherit;z-index: 1000;opacity: 1;}.ace_composition_placeholder { color: transparent }.ace_composition_marker { border-bottom: 1px solid;position: absolute;border-radius: 0;margin-top: 1px;}[ace_nocontext=true] {transform: none!important;filter: none!important;clip-path: none!important;mask : none!important;contain: none!important;perspective: none!important;mix-blend-mode: initial!important;z-index: auto;}.ace_layer {z-index: 1;position: absolute;overflow: hidden;word-wrap: normal;white-space: pre;height: 100%;width: 100%;box-sizing: border-box;pointer-events: none;}.ace_gutter-layer {position: relative;width: auto;text-align: right;pointer-events: auto;height: 1000000px;contain: style size layout;}.ace_text-layer {font: inherit !important;position: absolute;height: 1000000px;width: 1000000px;contain: style size layout;}.ace_text-layer > .ace_line, .ace_text-layer > .ace_line_group {contain: style size layout;position: absolute;top: 0;left: 0;right: 0;}.ace_hidpi .ace_text-layer,.ace_hidpi .ace_gutter-layer,.ace_hidpi .ace_content,.ace_hidpi .ace_gutter {contain: strict;will-change: transform;}.ace_hidpi .ace_text-layer > .ace_line, .ace_hidpi .ace_text-layer > .ace_line_group {contain: strict;}.ace_cjk {display: inline-block;text-align: center;}.ace_cursor-layer {z-index: 4;}.ace_cursor {z-index: 4;position: absolute;box-sizing: border-box;border-left: 2px solid;transform: translatez(0);}.ace_multiselect .ace_cursor {border-left-width: 1px;}.ace_slim-cursors .ace_cursor {border-left-width: 1px;}.ace_overwrite-cursors .ace_cursor {border-left-width: 0;border-bottom: 1px solid;}.ace_hidden-cursors .ace_cursor {opacity: 0.2;}.ace_hasPlaceholder .ace_hidden-cursors .ace_cursor {opacity: 0;}.ace_smooth-blinking .ace_cursor {transition: opacity 0.18s;}.ace_animate-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: step-end;animation-name: blink-ace-animate;animation-iteration-count: infinite;}.ace_animate-blinking.ace_smooth-blinking .ace_cursor {animation-duration: 1000ms;animation-timing-function: ease-in-out;animation-name: blink-ace-animate-smooth;}@keyframes blink-ace-animate {from, to { opacity: 1; }60% { opacity: 0; }}@keyframes blink-ace-animate-smooth {from, to { opacity: 1; }45% { opacity: 1; }60% { opacity: 0; }85% { opacity: 0; }}.ace_marker-layer .ace_step, .ace_marker-layer .ace_stack {position: absolute;z-index: 3;}.ace_marker-layer .ace_selection {position: absolute;z-index: 5;}.ace_marker-layer .ace_bracket {position: absolute;z-index: 6;}.ace_marker-layer .ace_error_bracket {position: absolute;border-bottom: 1px solid #DE5555;border-radius: 0;}.ace_marker-layer .ace_active-line {position: absolute;z-index: 2;}.ace_marker-layer .ace_selected-word {position: absolute;z-index: 4;box-sizing: border-box;}.ace_line .ace_fold {box-sizing: border-box;display: inline-block;height: 11px;margin-top: -2px;vertical-align: middle;background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACJJREFUeNpi+P//fxgTAwPDBxDxD078RSX+YeEyDFMCIMAAI3INmXiwf2YAAAAASUVORK5CYII=");background-repeat: no-repeat, repeat-x;background-position: center center, top left;color: transparent;border: 1px solid black;border-radius: 2px;cursor: pointer;pointer-events: auto;}.ace_dark .ace_fold {}.ace_fold:hover{background-image:url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABEAAAAJCAYAAADU6McMAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAJpJREFUeNpi/P//PwOlgAXGYGRklAVSokD8GmjwY1wasKljQpYACtpCFeADcHVQfQyMQAwzwAZI3wJKvCLkfKBaMSClBlR7BOQikCFGQEErIH0VqkabiGCAqwUadAzZJRxQr/0gwiXIal8zQQPnNVTgJ1TdawL0T5gBIP1MUJNhBv2HKoQHHjqNrA4WO4zY0glyNKLT2KIfIMAAQsdgGiXvgnYAAAAASUVORK5CYII="),url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAA3CAYAAADNNiA5AAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAACBJREFUeNpi+P//fz4TAwPDZxDxD5X4i5fLMEwJgAADAEPVDbjNw87ZAAAAAElFTkSuQmCC");}.ace_tooltip {background-color: #FFF;background-image: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.1));border: 1px solid gray;border-radius: 1px;box-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);color: black;max-width: 100%;padding: 3px 4px;position: fixed;z-index: 999999;box-sizing: border-box;cursor: default;white-space: pre;word-wrap: break-word;line-height: normal;font-style: normal;font-weight: normal;letter-spacing: normal;pointer-events: none;}.ace_folding-enabled > .ace_gutter-cell {padding-right: 13px;}.ace_fold-widget {box-sizing: border-box;margin: 0 -12px 0 1px;display: none;width: 11px;vertical-align: top;background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42mWKsQ0AMAzC8ixLlrzQjzmBiEjp0A6WwBCSPgKAXoLkqSot7nN3yMwR7pZ32NzpKkVoDBUxKAAAAABJRU5ErkJggg==");background-repeat: no-repeat;background-position: center;border-radius: 3px;border: 1px solid transparent;cursor: pointer;}.ace_folding-enabled .ace_fold-widget {display: inline-block;   }.ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAANElEQVR42m3HwQkAMAhD0YzsRchFKI7sAikeWkrxwScEB0nh5e7KTPWimZki4tYfVbX+MNl4pyZXejUO1QAAAABJRU5ErkJggg==");}.ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAGCAYAAAAG5SQMAAAAOUlEQVR42jXKwQkAMAgDwKwqKD4EwQ26sSOkVWjgIIHAzPiCgaqiqnJHZnKICBERHN194O5b9vbLuAVRL+l0YWnZAAAAAElFTkSuQmCCXA==");}.ace_fold-widget:hover {border: 1px solid rgba(0, 0, 0, 0.3);background-color: rgba(255, 255, 255, 0.2);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.7);}.ace_fold-widget:active {border: 1px solid rgba(0, 0, 0, 0.4);background-color: rgba(0, 0, 0, 0.05);box-shadow: 0 1px 1px rgba(255, 255, 255, 0.8);}.ace_dark .ace_fold-widget {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAHklEQVQIW2P4//8/AzoGEQ7oGCaLLAhWiSwB146BAQCSTPYocqT0AAAAAElFTkSuQmCC");}.ace_dark .ace_fold-widget.ace_end {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAUAAAAFCAYAAACNbyblAAAAH0lEQVQIW2P4//8/AxQ7wNjIAjDMgC4AxjCVKBirIAAF0kz2rlhxpAAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget.ace_closed {background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAMAAAAFCAYAAACAcVaiAAAAHElEQVQIW2P4//+/AxAzgDADlOOAznHAKgPWAwARji8UIDTfQQAAAABJRU5ErkJggg==");}.ace_dark .ace_fold-widget:hover {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);background-color: rgba(255, 255, 255, 0.1);}.ace_dark .ace_fold-widget:active {box-shadow: 0 1px 1px rgba(255, 255, 255, 0.2);}.ace_inline_button {border: 1px solid lightgray;display: inline-block;margin: -1px 8px;padding: 0 5px;pointer-events: auto;cursor: pointer;}.ace_inline_button:hover {border-color: gray;background: rgba(200,200,200,0.2);display: inline-block;pointer-events: auto;}.ace_fold-widget.ace_invalid {background-color: #FFB4B4;border-color: #DE5555;}.ace_fade-fold-widgets .ace_fold-widget {transition: opacity 0.4s ease 0.05s;opacity: 0;}.ace_fade-fold-widgets:hover .ace_fold-widget {transition: opacity 0.05s ease 0.05s;opacity:1;}.ace_underline {text-decoration: underline;}.ace_bold {font-weight: bold;}.ace_nobold .ace_bold {font-weight: normal;}.ace_italic {font-style: italic;}.ace_error-marker {background-color: rgba(255, 0, 0,0.2);position: absolute;z-index: 9;}.ace_highlight-marker {background-color: rgba(255, 255, 0,0.2);position: absolute;z-index: 8;}.ace_mobile-menu {position: absolute;line-height: 1.5;border-radius: 4px;-ms-user-select: none;-moz-user-select: none;-webkit-user-select: none;user-select: none;background: white;box-shadow: 1px 3px 2px grey;border: 1px solid #dcdcdc;color: black;}.ace_dark > .ace_mobile-menu {background: #333;color: #ccc;box-shadow: 1px 3px 2px grey;border: 1px solid #444;}.ace_mobile-button {padding: 2px;cursor: pointer;overflow: hidden;}.ace_mobile-button:hover {background-color: #eee;opacity:1;}.ace_mobile-button:active {background-color: #ddd;}.ace_placeholder {font-family: arial;transform: scale(0.9);transform-origin: left;white-space: pre;opacity: 0.7;margin: 0 10px;}
+/*# sourceURL=ace/css/ace_editor.css */</style><style id="ha-light-default">.ha-light-default {font-family: 'Ubuntu Mono', 'Courier New', monospace;font-size: 16px}.ha-light-default .ace_gutter {background: #f2f2f2;color: #c0c0c0;border-right: 1px solid #d5d5d5;}.ha-light-default .ace_fold {background-color: #6B72E6;}.ha-light-default {background-color: #FFFFFF;color: black;}.ha-light-default .ace_cursor {color: black;}.ha-light-default .ace_invisible {color: rgb(191, 191, 191);}.ha-light-default .ace_storage,.ha-light-default .ace_keyword {color: blue;}.ha-light-default .ace_constant {color: rgb(197, 6, 11);}.ha-light-default .ace_constant.ace_buildin {color: rgb(88, 72, 246);}.ha-light-default .ace_constant.ace_language {color: rgb(88, 92, 246);}.ha-light-default .ace_constant.ace_library {color: rgb(6, 150, 14);}.ha-light-default .ace_invalid {background-color: rgba(255, 0, 0, 0.1);color: red;}.ha-light-default .ace_support.ace_function {color: rgb(60, 76, 114);}.ha-light-default .ace_support.ace_constant {color: rgb(6, 150, 14);}.ha-light-default .ace_support.ace_type,.ha-light-default .ace_support.ace_class {color: rgb(109, 121, 222);}.ha-light-default .ace_keyword.ace_operator {color: rgb(104, 118, 135);}.ha-light-default .ace_string {color: rgb(3, 106, 7);}.ha-light-default .ace_comment {color: #bc14af;}.ha-light-default .ace_comment.ace_doc {color: rgb(0, 102, 255);}.ha-light-default .ace_comment.ace_doc.ace_tag {color: rgb(128, 159, 191);}.ha-light-default .ace_constant.ace_numeric {color: rgb(0, 0, 205);}.ha-light-default .ace_variable {color: rgb(49, 132, 149);}.ha-light-default .ace_xml-pe {color: rgb(104, 104, 91);}.ha-light-default .ace_entity.ace_name.ace_function {color: #0000A2;}.ha-light-default .ace_heading {color: rgb(12, 7, 255);}.ha-light-default .ace_list {color:rgb(185, 6, 144);}.ha-light-default .ace_meta.ace_tag {color:rgb(0, 22, 142);}.ha-light-default .ace_string.ace_regex {color: rgb(255, 0, 0)}.ha-light-default .ace_marker-layer .ace_selection {background: rgb(181, 213, 255);}.ha-light-default.ace_multiselect .ace_selection.ace_start {box-shadow: 0 0 3px 0px white;}.ha-light-default .ace_marker-layer .ace_step {background: rgb(252, 255, 0);}.ha-light-default .ace_marker-layer .ace_stack {background: rgb(164, 229, 101);}.ha-light-default .ace_marker-layer .ace_bracket {margin: -1px 0 0 -1px;border: 1px solid rgb(192, 192, 192);}.ha-light-default .ace_marker-layer .ace_selected-word {background: rgb(250, 250, 255);border: 1px solid rgb(200, 200, 250);}.ha-light-default .ace_indent-guide {background: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAEAAAACCAYAAACZgbYnAAAAE0lEQVQImWP4////f4bLly//BwAmVgd1/w11/gAAAABJRU5ErkJggg==") right repeat-y;}.ha-light-default .ace_gutter-cell.ace_error {background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 16 16' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill-rule='evenodd' clip-rule='evenodd' d='M15 8C15 11.866 11.866 15 8 15C4.13403 15 1 11.866 1 8C1 4.13403 4.13403 1 8 1C11.866 1 15 4.13403 15 8ZM16 8C16 12.4183 12.4183 16 8 16C3.58173 16 0 12.4183 0 8C0 3.58173 3.58173 0 8 0C12.4183 0 16 3.58173 16 8ZM6.7287 3.88849C6.6958 3.59229 6.92761 3.33325 7.22565 3.33325H8.77502C9.07306 3.33325 9.30487 3.59229 9.27197 3.88849L8.71643 8.88849C8.68829 9.14166 8.47424 9.33325 8.21948 9.33325H7.78119C7.52643 9.33325 7.31238 9.14166 7.28424 8.88849L6.7287 3.88849ZM9.33368 12.0001C9.33368 12.7365 8.73669 13.3334 8.00031 13.3334C7.26392 13.3334 6.66699 12.7365 6.66699 12.0001C6.66699 11.2637 7.26392 10.6667 8.00031 10.6667C8.73669 10.6667 9.33368 11.2637 9.33368 12.0001Z' fill='%23F05A28'/%3E%3C/svg%3E%0A");background-position: 4px center;}.ha-light-default .ace_tooltip {display: none !important;border: 1px solid #e84e1b;background-image: none;box-shadow: none;color: #333333;background-color: #ffffff;font-size: 14px;font-family: 'TT Norms Pro','Arial',sans-serif;}.ha-light-default .ace_tooltip::before {content: '';position: absolute;top: calc(50% - 4px);left: -4px;width: 8px;height: 8px;border: 1px solid #e84e1b;border-top-color: transparent;border-right-color: transparent;transform: rotate(45deg);background-color: #ffffff;}.ha-light-default .ace_fold-widget,.ha-light-default .ace_fold-widget:hover {box-shadow: none;border: none;border-radius: 0;}</style><meta name="viewport" content="width=device-width,initial-scale=1"><script async="" src="./Разметка рецепта — Разметка текста — HTML Academy_files/gtm.js.Без названия"></script><script type="text/javascript" integrity="sha384-d/yhnowERvm+7eCU79T/bYjOiMmq4F11ElWYLmt0ktvYEVgqLDazh4+gW9CKMpYW" crossorigin="anonymous" async="" src="./Разметка рецепта — Разметка текста — HTML Academy_files/amplitude-5.2.2-min.gz.js.Без названия"></script><script>document.documentElement.classList.remove('no-js');</script><meta property="fb:pages" content="153418588117906"><script>dataLayer=[];dataLayer.push({userId: 2083681});</script><script>dataLayer.push({"user_experiments": {"202143_leadProfLite":"regular","htmlCssWelcomeFirst":"experimental"} });</script><script>
+        dataLayer.push({
+          "registration_date": "04.04.2022",
+          "subscription_status": "none",
+          "tasks_count": 43,
+          "show_year_sale_popup": "",
+          "user_currency": "RUB",
+          "user_skills": [],
+          "user_intensives": [],
+        });
+      </script><script>dataLayer.push({"event":"courses.challenge_completed","course_id":"25","chapter_id":"301","task_id":"5819"});</script><script src="./Разметка рецепта — Разметка текста — HTML Academy_files/sentry.js.Без названия" data-sentry="68c98481b99a48e9a1d3ae0112734c59" data-project="13" data-version="2" data-sample-rate="0.25"></script><script type="text/javascript">
+      (function(e,t){var n=e.amplitude||{_q:[],_iq:{}};var r=t.createElement("script")
+      ;r.type="text/javascript"
+      ;r.integrity="sha384-d/yhnowERvm+7eCU79T/bYjOiMmq4F11ElWYLmt0ktvYEVgqLDazh4+gW9CKMpYW"
+      ;r.crossOrigin="anonymous";r.async=true
+      ;r.src="https://cdn.amplitude.com/libs/amplitude-5.2.2-min.gz.js"
+      ;r.onload=function(){if(!e.amplitude.runQueuedFunctions){
+        console.log("[Amplitude] Error: could not load SDK")}}
+      ;var i=t.getElementsByTagName("script")[0];i.parentNode.insertBefore(r,i)
+      ;function s(e,t){e.prototype[t]=function(){
+        this._q.push([t].concat(Array.prototype.slice.call(arguments,0)));return this}}
+        var o=function(){this._q=[];return this}
+        ;var a=["add","append","clearAll","prepend","set","setOnce","unset"]
+        ;for(var u=0;u<a.length;u++){s(o,a[u])}n.Identify=o;var c=function(){this._q=[]
+          ;return this}
+        ;var l=["setProductId","setQuantity","setPrice","setRevenueType","setEventProperties"]
+        ;for(var p=0;p<l.length;p++){s(c,l[p])}n.Revenue=c
+        ;var d=["init","logEvent","logRevenue","setUserId","setUserProperties","setOptOut","setVersionName","setDomain","setDeviceId","setGlobalUserProperties","identify","clearUserProperties","setGroup","logRevenueV2","regenerateDeviceId","groupIdentify","onInit","logEventWithTimestamp","logEventWithGroups","setSessionId","resetSessionId"]
+        ;function v(e){function t(t){e[t]=function(){
+          e._q.push([t].concat(Array.prototype.slice.call(arguments,0)))}}
+          for(var n=0;n<d.length;n++){t(d[n])}}v(n);n.getInstance=function(e){
+          e=(!e||e.length===0?"$default_instance":e).toLowerCase()
+          ;if(!n._iq.hasOwnProperty(e)){n._iq[e]={_q:[]};v(n._iq[e])}return n._iq[e]}
+        ;e.amplitude=n})(window,document);
+
+      amplitude.getInstance().init("f602c01f1c06db4f52768e6adaa4eb56", 2083681,{
+        includeUtm: true,
+        includeGclid: true,
+        includeReferrer: true,
+        deviceIdFromUrlParam: true
+      }, function (instance) {
+        window.amplitudeLoaded = true;
+      });
+    </script><script>(function(w,d,s,l,i){ w[l]=w[l]||[];w[l].push({ 'gtm.start':new Date().getTime(),event:'gtm.js' });var f=d.getElementsByTagName(s)[0],j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src='https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f); })(window,document,'script','dataLayer', "GTM-MM92BM");</script><script>
+          var identify = new amplitude.Identify();
+                                    identify = identify.set("course_access", "Yes");
+                                                identify = identify.set("institution_student", "Full");
+                      
+          amplitude.getInstance().identify(identify);
+        </script><link rel="dns-prefetch" href="https://assets.htmlacademy.ru/"><link rel="stylesheet" href="./Разметка рецепта — Разметка текста — HTML Academy_files/core.v194.css"><link rel="stylesheet" href="./Разметка рецепта — Разметка текста — HTML Academy_files/course.v205.css"><link rel="stylesheet" href="./Разметка рецепта — Разметка текста — HTML Academy_files/course-interface-light.v19.css"><link rel="stylesheet" href="./Разметка рецепта — Разметка текста — HTML Academy_files/course-interface-ru.v2.css"><link rel="preload" as="script" href="./Разметка рецепта — Разметка текста — HTML Academy_files/general.v221.js.Без названия"><title>Разметка рецепта — Разметка текста — HTML Academy</title><meta name="csrf-token" content="55852083681d253664c0b843a8eda67dc1b4bbfee5e"><meta name="theme-color" content="#2d2d44"><link rel="mask-icon" href="https://htmlacademy.ru/favicon.svg" color="#2f358f"><link rel="manifest" href="https://htmlacademy.ru/htmlacademy.webmanifest"><meta name="application-name" content="HTML Academy"><meta name="apple-mobile-web-app-title" content="HTML Academy"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:site" content="@htmlacademy_ru"><meta property="fb:app_id" content="144426935714125"><meta property="og:site_name" content="HTML Academy"><meta property="og:type" content="htmlacademy:course"><meta name="twitter:url" property="og:url" content="https://htmlacademy.ru/courses/301"><meta name="twitter:title" property="og:title" content="Разметка текста"><meta name="twitter:description" property="og:description" content="Продолжаем верстать страницу блога, изучаем, как правильно размечать текстовое содержание: абзацы, заголовки, подзаголовки, списки и многое другое."><meta name="twitter:image" property="og:image" content="https://assets.htmlacademy.ru/content/courses/og/301.png"><meta property="vk:image" content="https://assets.htmlacademy.ru/content/courses/og/301-vk.png"><link rel="canonical" href="https://htmlacademy.ru/courses/301/challenge/2"><meta name="yandex-tableau-widget" content="logo=https://assets.htmlacademy.ru/img/logo--tableau.png,color=#ee5b33"><meta name="format-detection" content="telephone=no"><link rel="preload" href="https://assets.htmlacademy.ru/fonts/tt-norms-pro-400-normal.v2.woff2" type="font/woff2" as="font" crossorigin="anonymous"><link rel="preload" href="https://assets.htmlacademy.ru/fonts/tt-norms-pro-500-normal.v2.woff2" type="font/woff2" as="font" crossorigin="anonymous"><link rel="preload" href="https://assets.htmlacademy.ru/fonts/tt-norms-pro-700-normal.v2.woff2" type="font/woff2" as="font" crossorigin="anonymous"><link rel="preload" href="https://assets.htmlacademy.ru/fonts/ubuntu-mono.woff2?cs=7882c41280d8256972fd2b8ee74e2d7d28a857b6" type="font/woff2" as="font" crossorigin="anonymous"><script charset="utf-8" src="./Разметка рецепта — Разметка текста — HTML Academy_files/21aceb.js.Без названия"></script><link rel="prefetch" as="script" href="https://assets.htmlacademy.ru/scripts/courses-spa/2410.bundle.js?hash=4983c00d689e23dc2514"><link rel="prefetch" as="script" href="https://assets.htmlacademy.ru/scripts/courses-spa/4699.bundle.js?hash=e7fe86b3d650f9c60f2a"><link rel="prefetch" as="script" href="https://assets.htmlacademy.ru/scripts/courses-spa/952.bundle.js?hash=5661640b19d3258ba7dd"><link rel="prefetch" as="script" href="https://assets.htmlacademy.ru/scripts/courses-spa/6264.bundle.js?hash=3a811a5cfee789e3682c"><link rel="prefetch" as="script" href="https://assets.htmlacademy.ru/scripts/courses-spa/5993.bundle.js?hash=64d82947fc4579b67bc6"><link rel="prefetch" as="script" href="https://assets.htmlacademy.ru/scripts/courses-spa/7760.bundle.js?hash=4958f2b9b26ca680f3f7"><script charset="utf-8" src="./Разметка рецепта — Разметка текста — HTML Academy_files/2ed27c.js.Без названия"></script><style>.tooltip-answer {
+  padding: 8px 10px;
+  background-color: #f2f2f2;
+
+  opacity: 0;
+
+  transition: opacity 1s;
+}
+
+.tooltip-answer_visible {
+  opacity: 1;
+}
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8uLy4uL2FjZS1lZGl0b3ItbW92aWUuanMvc3JjL3Rvb2x0aXAvYWNlLXRvb2x0aXAuY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUFBO0VBQ0UsaUJBQWlCO0VBQ2pCLHlCQUF5Qjs7RUFFekIsVUFBVTs7RUFFVixzQkFBc0I7QUFDeEI7O0FBRUE7RUFDRSxVQUFVO0FBQ1oiLCJzb3VyY2VzQ29udGVudCI6WyIudG9vbHRpcC1hbnN3ZXIge1xuICBwYWRkaW5nOiA4cHggMTBweDtcbiAgYmFja2dyb3VuZC1jb2xvcjogI2YyZjJmMjtcblxuICBvcGFjaXR5OiAwO1xuXG4gIHRyYW5zaXRpb246IG9wYWNpdHkgMXM7XG59XG5cbi50b29sdGlwLWFuc3dlcl92aXNpYmxlIHtcbiAgb3BhY2l0eTogMTtcbn1cbiJdLCJzb3VyY2VSb290IjoiIn0= */</style><style type="text/css">/*
+ * contextMenu.js v 1.4.0
+ * Author: Sudhanshu Yadav
+ * s-yadav.github.com
+ * Copyright (c) 2013 Sudhanshu Yadav.
+ * Dual licensed under the MIT and GPL licenses
+**/
+
+.iw-contextMenu {
+    box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.10) !important;
+    border: 1px solid #c8c7cc !important;
+    border-radius: 11px !important;
+    display: none;
+    z-index: 1000000132;
+    max-width: 300px !important;
+    width: auto !important;
+}
+
+.dark-mode .iw-contextMenu,
+.TnITTtw-dark-mode.iw-contextMenu,
+.TnITTtw-dark-mode .iw-contextMenu {
+    border-color: #747473 !important;
+}
+
+.iw-cm-menu {
+    background: #fff !important;
+    color: #000 !important;
+    margin: 0px !important;
+    padding: 0px !important;
+    overflow: visible !important;
+}
+
+.dark-mode .iw-cm-menu,
+.TnITTtw-dark-mode.iw-cm-menu,
+.TnITTtw-dark-mode .iw-cm-menu {
+    background: #525251 !important;
+    color: #FFF !important;
+}
+
+.iw-curMenu {
+}
+
+.iw-cm-menu li {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif !important;
+    list-style: none !important;
+    padding: 10px !important;
+    padding-right: 20px !important;
+    border-bottom: 1px solid #c8c7cc !important;
+    font-weight: 400 !important;
+    cursor: pointer !important;
+    position: relative !important;
+    font-size: 14px !important;
+    margin: 0 !important;
+    line-height: inherit !important;
+    border-radius: 0 !important;
+    display: block !important;
+}
+
+.dark-mode .iw-cm-menu li, .TnITTtw-dark-mode .iw-cm-menu li {
+    border-bottom-color: #747473 !important;
+}
+
+.iw-cm-menu li:first-child {
+    border-top-left-radius: 11px !important;
+    border-top-right-radius: 11px !important;
+}
+
+.iw-cm-menu li:last-child {
+    border-bottom-left-radius: 11px !important;
+    border-bottom-right-radius: 11px !important;
+    border-bottom: none !important;
+}
+
+.iw-mOverlay {
+    position: absolute !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0px !important;
+    left: 0px !important;
+    background: #FFF !important;
+    opacity: .5 !important;
+}
+
+.iw-contextMenu li.iw-mDisable {
+    opacity: 0.3 !important;
+    cursor: default !important;
+}
+
+.iw-mSelected {
+    background-color: #F6F6F6 !important;
+}
+
+.dark-mode .iw-mSelected, .TnITTtw-dark-mode .iw-mSelected {
+    background-color: #676766 !important;
+}
+
+.iw-cm-arrow-right {
+    width: 0 !important;
+    height: 0 !important;
+    border-top: 5px solid transparent !important;
+    border-bottom: 5px solid transparent !important;
+    border-left: 5px solid #000 !important;
+    position: absolute !important;
+    right: 5px !important;
+    top: 50% !important;
+    margin-top: -5px !important;
+}
+
+.dark-mode .iw-cm-arrow-right, .TnITTtw-dark-mode .iw-cm-arrow-right {
+    border-left-color: #FFF !important;
+}
+
+.iw-mSelected > .iw-cm-arrow-right {
+}
+
+/*context menu css end */</style><style type="text/css">.TnITTtw-fp-collapsed-button {
+    display: none;
+    position: fixed !important;
+    top: 16px !important;
+    right: 16px !important;
+}
+
+.TnITTtw-fp-collapsed-button:hover {
+    opacity: 1.0 !important;
+}
+
+.TnITTtw-mate-fp-bar {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif !important;
+    color: #000;
+    position: fixed;
+    top: 16px;
+    right: 16px;
+    z-index: 999;
+    background: rgb(255 255 255 / 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 16px;
+    border-radius: 11px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 25%);
+    width: 320px;
+    line-height: initial;
+}
+
+@-moz-document url-prefix() {
+    .TnITTtw-mate-fp-bar {
+        background: rgb(255 255 255 / 1.0);
+    }
+}
+
+.TnITTtw-mate-fp-bar.TnITTtw-dark-mode {
+    background: rgb(44, 44, 43);
+}
+
+.TnITTtw-hide-fp-bar {
+    width: 12px;
+    height: 12px;
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/regular-close-tt.png) !important;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.TnITTtw-hide-fp-bar:hover {
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/hover-close-tt.png) !important;
+}
+
+.TnITTtw-current-page-lang {
+    color: #6d6d72;
+    font-size: 14px;
+    font-weight: 600;
+    margin-bottom: 8px;
+    text-align: center;
+}
+
+.TnITTtw-dark-mode .TnITTtw-current-page-lang {
+    color: #98989D;
+}
+
+.TnITTtw-fp-translate {
+    width: calc(100% - 73px) !important;
+    font-size: 14px !important;
+    text-transform: none !important;
+}
+
+.TnITTtw-fp-translate.TnITTtw-in-progress {
+    animation-name: funky-bg;
+    animation-duration: 10s;
+    animation-timing-function: ease-in;
+}
+
+.TnITTtw-fp-translate.TnITTtw-show-original {
+    width: calc(100% - 20px) !important;
+}
+
+@keyframes funky-bg {
+    from {
+        background-image: linear-gradient(145deg, #01EF92, #00D8FB),
+        linear-gradient(35deg, rgba(1, 239, 146, 0.25), rgba(0, 216, 251, 0.25)) !important;
+    }
+
+    to {
+        background-image: linear-gradient(90deg, #01EF92, #00D8FB),
+        linear-gradient(35deg, rgba(1, 239, 146, 0.25), rgba(0, 216, 251, 0.25)) !important;
+    }
+}
+
+.TnITTtw-change-language, .TnITTtw-stop-fp {
+    width: 38px;
+    height: 38px;
+    background-color: #EFEFF4;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 16px 16px;
+    border-radius: 11px;
+    display: inline-block;
+    vertical-align: top;
+    cursor: pointer;
+}
+
+.TnITTtw-change-language {
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/globe-earth.png) !important;
+}
+
+.TnITTtw-dark-mode .TnITTtw-change-language {
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/globe-earth-dark.png) !important;
+}
+
+.TnITTtw-stop-fp {
+    display: none;
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/regular-stt-stop.png) !important;
+    background-size: 12px 12px;
+}
+
+.TnITTtw-dark-mode .TnITTtw-change-language, .TnITTtw-dark-mode .TnITTtw-stop-fp {
+    background-color: #525251 !important;
+}
+
+.TnITTtw-change-language:hover, .TnITTtw-stop-fp:hover {
+    background-color: #F6F6F6;
+}
+
+.TnITTtw-change-language:active, .TnITTtw-stop-fp:active {
+    background-color: #E9E9E9;
+}
+
+.TnITTtw-dark-mode .TnITTtw-change-language:hover,
+.TnITTtw-dark-mode .TnITTtw-stop-fp:hover,
+.TnITTtw-dark-mode .TnITTtw-change-language:active,
+.TnITTtw-dark-mode .TnITTtw-stop-fp:active {
+    background-color: #767675;
+}
+
+#TnITTtw-always-translate {
+}
+
+.TnITTtw-fp-options input {
+    padding: initial;
+    width: auto;
+    border: initial;
+    box-shadow: initial;
+    line-height: initial;
+    height: auto;
+    display: initial;
+    position: initial;
+    appearance: auto;
+    top: initial;
+    cursor: pointer;
+    margin: 0;
+}
+
+.TnITTtw-fp-options input[readonly="readonly"] {
+    opacity: 0.5;
+}
+
+#TnITTtw-always-translate + label,
+#TnITTtw-never-translate-lang + label,
+#TnITTtw-never-translate-site + label {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif !important;
+    display: inline-block;
+    font-weight: 400;
+    font-size: 14px;
+    margin-left: 4px;
+    color: #000;
+    cursor: pointer;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    width: 296px;
+    vertical-align: top;
+    line-height: initial;
+    letter-spacing: initial;
+    text-transform: initial;
+    margin-right: 0;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+}
+
+#TnITTtw-always-translate + label::before,
+#TnITTtw-never-translate-lang + label::before,
+#TnITTtw-never-translate-site + label::before,
+#TnITTtw-always-translate + label::after,
+#TnITTtw-never-translate-lang + label::after,
+#TnITTtw-never-translate-site + label::after  {
+    content: initial;
+} 
+
+.TnITTtw-always-translate-inner-label {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
+    max-width: 252px;
+    vertical-align: top;
+    display: inline-block;
+}
+
+.TnITTtw-dark-mode #TnITTtw-always-translate + label,
+.TnITTtw-dark-mode #TnITTtw-never-translate-lang + label,
+.TnITTtw-dark-mode #TnITTtw-never-translate-site + label {
+    color: #FFF;
+}
+
+#TnITTtw-always-translate + label.TnITTtw-not-pro {
+    opacity: 0.5;
+}
+
+#TnITTtw-always-translate + label .TnITTtw-pro-label {
+    position: relative;
+    background: #000;
+    font-size: 11px;
+    text-transform: uppercase;
+    color: #FFF;
+    padding: 2px 5px;
+    border-radius: 4px;
+    margin-left: 10px;
+    top: -1px;
+    user-select: none;
+    -webkit-user-select: none;
+    display: inline;
+    font-weight: 500;
+}
+
+.TnITTtw-dark-mode #TnITTtw-always-translate + label .TnITTtw-pro-label {
+    background: #FFF;
+    color: #000;
+}
+
+.TnITTtw-inline-original-tooltip {
+    display: none;
+    position: absolute;
+    margin: 0px;
+    border: none;
+    padding: 16px;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255 255 255 / 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 11px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 25%);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    font-size: 16px;
+    line-height: normal;
+}
+
+.TnITTtw-dark-mode.TnITTtw-inline-original-tooltip {
+    background-color: rgb(0 0 0 / 0.915);
+    color: #FFF;
+}
+
+.TnITTtw-inline-original-tooltip .TnITTtw-close-original-tooltip {
+    width: 12px;
+    height: 12px;
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/regular-close-tt.png) !important;
+    background-size: 12px 12px;
+    background-repeat: no-repeat;
+    background-position: center;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.TnITTtw-inline-original-tooltip .TnITTtw-close-original-tooltip:hover {
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/hover-close-tt.png) !important;
+}
+
+.TnITTtw-inline-original-tooltip .TnITTtw-original-label {
+    margin: 0;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    color: #6d6d72;
+    margin-bottom: 10px;
+}
+
+.TnITTtw-inline-original-tooltip.TnITTtw-dark-mode .TnITTtw-original-label {
+    color: #98989D;
+}
+
+.TnITTtw-inline-original-tooltip .TnITTtw-text-layout {
+    display: inline-block;
+    margin: 0;
+    font-size: 16px;
+    color: #000;
+}
+
+.TnITTtw-inline-original-tooltip.TnITTtw-dark-mode .TnITTtw-text-layout {
+    color: #FFF;
+}
+
+.TnITTtw-highlighted-for-original {
+    color: #0F0F5F;
+    background-color: #F0F0A0;
+}
+
+/* Dropdown scrollbars */
+
+#selVisibleScroll-1, #selVisibleScroll-2, #selVisibleScroll-3 {
+    overflow: hidden;
+    height: 259px;
+    width: 100%;
+    position: relative;
+}
+
+#sel-scrollbar-1, #sel-scrollbar-2, #sel-scrollbar-3 {
+    position: absolute;
+    width: 4px;
+    height: 259px;
+    left: 225px;
+}
+
+#sel-track-1, #sel-track-2, #sel-track-3 {
+    position: absolute;
+    top: 1px;
+    width: 4px;
+    height: calc(100% - 6px);
+}
+
+#sel-dragBar-1, #sel-dragBar-2, #sel-dragBar-3 {
+    position: absolute;
+    top: 1px;
+    width: 4px;
+    background: rgba(43, 43, 43, 0.5);
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.dark-mode #sel-dragBar-1, .dark-mode #sel-dragBar-2, .dark-mode #sel-dragBar-3 {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+#sel-dragBar-1:hover, #sel-dragBar-2:hover, #sel-dragBar-3:hover, 
+#sel-dragBar-1:active, #sel-dragBar-2:active, #sel-dragBar-3:active {
+    background: rgba(43, 43, 43, 0.675);
+}
+
+.dark-mode #sel-dragBar-1:hover,
+.dark-mode #sel-dragBar-2:hover,
+.dark-mode #sel-dragBar-3:hover,
+.dark-mode #sel-dragBar-1:active,
+.dark-mode #sel-dragBar-2:active,
+.dark-mode #sel-dragBar-3:active {
+    background: rgba(255, 255, 255, 0.675);
+}
+
+#sel-scrollbar-1, #sel-track-1, #sel-dragBar-1, 
+#sel-scrollbar-2, #sel-track-2, #sel-dragBar-2,
+#sel-scrollbar-3, #sel-track-3, #sel-dragBar-3 {
+    -webkit-user-select: none;
+    user-select: none;
+}
+
+/* Spinner for when it's translating a page */
+
+.TnITTtw-cta-button-layout {
+    position: relative;
+    display: inline;
+}
+
+.TnITTtw-spinner {
+    display: none;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    user-select: none;
+    -webkit-user-select: none;
+}
+  
+  @media screen and (max-width: 800px) {
+    .TnITTtw-spinner {
+      top: 28px;
+    }
+  }
+
+  .TnITTtw-spinner.in-text {
+    display: block;
+    background: transparent;
+    position: initial;
+  }
+
+  .TnITTtw-spinner.left {
+    text-align: left;
+  }
+  
+  .TnITTtw-spinner > div {
+    width: 12px;
+    height: 12px;
+    background-color: rgb(0, 71, 46);
+  
+    border-radius: 100%;
+    display: inline-block;
+    -webkit-animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+    animation: sk-bouncedelay 1.4s infinite ease-in-out both;
+  }
+
+  .TnITTtw-spinner.in-text > div {
+    background-color: #000;
+  }
+  
+  .TnITTtw-spinner .TnITTtw-bounce1 {
+    -webkit-animation-delay: -0.32s;
+    animation-delay: -0.32s;
+  }
+  
+  .TnITTtw-spinner .TnITTtw-bounce2 {
+    -webkit-animation-delay: -0.16s;
+    animation-delay: -0.16s;
+  }
+  
+  @-webkit-keyframes sk-bouncedelay {
+    0%, 80%, 100% { -webkit-transform: scale(0) }
+    40% { -webkit-transform: scale(1.0) }
+  }
+  
+  @keyframes sk-bouncedelay {
+    0%, 80%, 100% { 
+      -webkit-transform: scale(0);
+      transform: scale(0);
+    } 40% { 
+      -webkit-transform: scale(1.0);
+      transform: scale(1.0);
+    }
+  }</style><script charset="utf-8" src="./Разметка рецепта — Разметка текста — HTML Academy_files/c054ef.js.Без названия"></script><style type="text/css">.ui_selector, .TnITTtw-ui_selector {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif;
+    display: inline-block;
+}
+
+.ui_selector .select, .TnITTtw-ui_selector .TnITTtw-select {
+    color: #000;
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    border: 1px solid rgba(200, 199, 204, 0.5);
+    padding: 10px 15px;
+    width: 201px;
+    -webkit-user-select: none;
+    cursor: pointer;
+    border-radius: 11px;
+    display: inline-block;
+    background-image: -webkit-linear-gradient(top, #FAFAFA, #F6F6F6);
+    background-image: -moz-linear-gradient(top, #FAFAFA, #F6F6F6);
+    background-size: auto 48px;
+    background-position: 0px -11px;
+    box-shadow: 0 0.5px 1px rgba(0, 0, 0, 0.10);
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.dark-mode .ui_selector .select, 
+.TnITTtw-dark-mode .TnITTtw-ui_selector .TnITTtw-select {
+    background-image: -webkit-linear-gradient(top, #4A4A49, #40403F);
+    background-image: -moz-linear-gradient(top, #4A4A49, #40403F);
+    color: #FFF;
+    border-color: #747473;
+}
+
+.ui_selector .select:hover,
+.TnITTtw-ui_selector .TnITTtw-select:hover {
+    color: #424242;
+    background-image: -webkit-linear-gradient(top, #FAFAFA, #FAFAFA);
+    background-image: -moz-linear-gradient(top, #FAFAFA, #FAFAFA);
+}
+
+.ui_selector .select:active,
+.TnITTtw-ui_selector .TnITTtw-select:active {
+    color: #6d6d72;
+    background-image: -webkit-linear-gradient(top, #F6F6F6, #F6F6F6);
+    background-image: -moz-linear-gradient(top, #F6F6F6, #F6F6F6);
+}
+
+.dark-mode .ui_selector .select:hover,
+.dark-mode .ui_selector .select:active,
+.TnITTtw-dark-mode .TnITTtw-ui_selector .TnITTtw-select:hover,
+.TnITTtw-dark-mode .TnITTtw-ui_selector .TnITTtw-select:active {
+    background-image: -webkit-linear-gradient(top, #4A4A49, #4A4A49);
+    background-image: -moz-linear-gradient(top, #4A4A49, #4A4A49);
+    color: #FFF;
+    border-color: #747473;
+}
+
+.ui_selector .select .detected-ico,
+.TnITTtw-ui_selector .TnITTtw-select .TnITTtw-detected-ico {
+    display: inline-block;
+}
+
+.ui_selector .active, .ui_selector .active:hover, .ui_selector .active:active,
+.TnITTtw-ui_selector .TnITTtw-active, .TnITTtw-ui_selector .TnITTtw-active:hover, .TnITTtw-ui_selector .TnITTtw-active:active {
+    box-shadow: 0 -1px 15px -10px rgba(0, 0, 0, 0.85) !important;
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    background: #F3F3F3;
+}
+
+.sliding-text,
+.TnITTtw-sliding-text {
+    position: relative;
+}
+
+.ui_selector .options,
+.TnITTtw-ui_selector .TnITTtw-options {
+    margin-left: 0px;
+    margin-top: -4px;
+    background: #fff;
+    border: 1px solid rgba(200, 199, 204, 0.5);
+    width: 231px;
+    overflow: hidden;
+    max-height: 313px;
+    position: absolute;
+    font-size: 12px;
+    box-shadow: 0 2px 10px rgb(0 0 0 / 25%);
+    border-bottom-left-radius: 6px;
+    border-bottom-right-radius: 6px;
+    display: none;
+}
+
+.ui_selector .options.standalone,
+.TnITTtw-ui_selector .TnITTtw-options.TnITTtw-standalone {
+    border-radius: 11px;
+    margin-top: 16px;
+}
+
+/* for now, it can only be on the top */
+.ui_selector .options-arrow,
+.TnITTtw-ui_selector .TnITTtw-options-arrow {
+    display: none;
+    position: absolute;
+    width: 32px !important;
+    height: 18px !important;
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/tt-dropdown-arrow.png);
+    background-size: 32px 18px;
+    transform: rotate(180deg);
+    margin-top: -1px;
+}
+
+.dark-mode .ui_selector .options-arrow,
+.TnITTtw-dark-mode .TnITTtw-ui_selector .TnITTtw-options-arrow {
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/tt-dropdown-arrow-dark.png);
+}
+
+.dark-mode .ui_selector .options,
+.TnITTtw-dark-mode .TnITTtw-ui_selector .TnITTtw-options {
+    background: #525251;
+}
+
+.ui_selector .options ul,
+.TnITTtw-ui_selector .TnITTtw-options ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 232px;
+}
+
+.ui_selector .options ul li,
+.TnITTtw-ui_selector .TnITTtw-options ul li {
+    padding: 10px 0px;
+    -webkit-user-select: none;
+    text-align: center;
+    font-size: 17px;
+    -webkit-transition: all 600ms cubic-bezier(0.23, 1, 0.32, 1);
+    margin: 0 10px;
+    border-radius: 6px;
+    position: relative;
+}
+
+.dark-mode .options ul li,
+.TnITTtw-dark-mode .TnITTtw-options ul li {
+    color: #fff;
+}
+
+.ui_selector .options ul li:last-child,
+.TnITTtw-ui_selector .TnITTtw-options ul li:last-child {
+    margin-bottom: 16px;
+}
+
+.ui_selector .options ul li.option:first-child,
+.ui_selector .options ul li.option_selected:first-child,
+.TnITTtw-ui_selector .TnITTtw-options ul li.TnITTtw-option:first-child,
+.TnITTtw-ui_selector .TnITTtw-options ul li.TnITTtw-option_selected:first-child {
+    margin-top: 16px;
+}
+
+.ui_selector .options ul li.whenHover,
+.TnITTtw-ui_selector .TnITTtw-options ul li.TnITTtw-whenHover {
+    cursor: pointer;
+    background: #f3f3f3;
+    text-align: center;
+}
+
+.dark-mode .ui_selector .options ul li.whenHover,
+.TnITTtw-dark-mode .TnITTtw-ui_selector .TnITTtw-options ul li.TnITTtw-whenHover {
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.ui_selector .options ul li.option_selected,
+.TnITTtw-ui_selector .TnITTtw-options ul li.TnITTtw-option_selected {
+    cursor: pointer;
+    background-image: linear-gradient(145deg, #01EF92, #00D8FB),
+    linear-gradient(35deg, rgba(1, 239, 146, 0.25), rgba(0, 216, 251, 0.25)) !important;
+    color: #fff;
+    font-weight: 600;
+}
+
+.ui_selector .options ul .group,
+.ui_selector .options ul .group:hover,
+.ui_selector .options ul .group.whenHover,
+.TnITTtw-ui_selector .TnITTtw-options ul .TnITTtw-group,
+.TnITTtw-ui_selector .TnITTtw-options ul .TnITTtw-group:hover,
+.TnITTtw-ui_selector .TnITTtw-options ul .TnITTtw-group.whenHover {
+    padding: 16px 10px;
+    color: #8e8e93;
+    font-weight: 600;
+    text-transform: uppercase;
+    font-size: 12px;
+    text-align: center;
+    cursor: default;
+    background: #FFF;
+}
+
+.dark-mode .ui_selector .options ul .group,
+.dark-mode .ui_selector .options ul .group:hover,
+.dark-mode .ui_selector .options ul .group.whenHover,
+.TnITTtw-dark-mode .TnITTtw-ui_selector .TnITTtw-options ul .TnITTtw-group,
+.TnITTtw-dark-mode .TnITTtw-ui_selector .TnITTtw-options ul .TnITTtw-group:hover,
+.TnITTtw-dark-mode .TnITTtw-ui_selector .TnITTtw-options ul .TnITTtw-group.TnITTtw-whenHover {
+    color: #98989D;
+    background: #525251;
+}
+
+.group-element,
+.TnITTtw-group-element {
+    width: 153px;
+}
+
+.options .dd-search,
+.TnITTtw-options .TnITTtw-dd-search {
+    border-bottom: 1px solid rgba(200, 199, 204, 0.5);
+}
+
+.dark-mode .options .dd-search,
+.TnITTtw-dark-mode .TnITTtw-options .TnITTtw-dd-search {
+    border-bottom-color: #747473;
+}
+
+.dd-search .dd-input,
+.TnITTtw-dd-search .TnITTtw-dd-input {
+    padding: 16px;
+    padding-left: calc(16px * 3);
+    width: 168px;
+    border: none;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Helvetica, Arial, Ubuntu, sans-serif;
+    text-align: left;
+    color: #000;
+    font-size: 17px;
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/searchfield-icon.png);
+    background-position: 16px;
+    background-size: 16px;
+    background-repeat: no-repeat;
+    margin: 0;
+    height: auto;
+}
+
+.dark-mode .dd-search .dd-input,
+.TnITTtw-dark-mode .TnITTtw-dd-search .TnITTtw-dd-input {
+    color: #FFF;
+    background-color: #525251;
+}
+
+.dd-search .dd-input:focus,
+.TnITTtw-dd-search .TnITTtw-dd-input:focus {
+    -webkit-transition: all 275ms cubic-bezier(0.23, 1, 0.32, 1);
+    outline: none;
+    text-align: left;
+}
+
+.dd-input::-webkit-input-placeholder,
+.TnITTtw-dd-input::-webkit-input-placeholder {
+    color: #8e8e93;
+}
+
+.search-failed-plaque,
+.TnITTtw-search-failed-plaque {
+    text-align: center;
+    padding: 20px;
+    color: #8e8e93;
+    font-size: 17px;
+    font-weight: 600;
+}
+
+.dark-mode .search-failed-plaque,
+.TnITTtw-dark-mode .TnITTtw-search-failed-plaque {
+    color: #98989D;
+}
+
+.rm-recent,
+.TnITTtw-rm-recent {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/regular-lang-remove.png);
+    background-size: 10px 10px;
+    top: 15px;
+    right: 10px;
+}
+
+.rm-recent:hover,
+.TnITTtw-rm-recent:hover {
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/hover-lang-remove.png);
+}
+
+.rm-recent:active,
+.TnITTtw-rm-recent:active {
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/down-lang-remove.png);
+}
+
+.option_selected .rm-recent,
+.TnITTtw-option_selected .TnITTtw-rm-recent {
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/down-active-lang-remove.png);
+}
+
+.option_selected .rm-recent:hover,
+.TnITTtw-option_selected .TnITTtw-rm-recent:hover {
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/hover-active-lang-remove.png);
+}
+
+.option_selected .rm-recent:active,
+.TnITTtw-option_selected .TnITTtw-rm-recent:active {
+    background-image: url(chrome-extension://ihmgiclibbndffejedjimfjmfoabpcke/res/images/ui/down-active-lang-remove.png);
+}
+
+.TnITTtw-hidden {
+    display: none;
+}</style><style type="text/css">@-webkit-keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}
+
+@keyframes load4 {
+    0%,
+    100% {
+        box-shadow: 0 -3em 0 0.2em, 2em -2em 0 0em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 0;
+    }
+    12.5% {
+        box-shadow: 0 -3em 0 0, 2em -2em 0 0.2em, 3em 0 0 0, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    25% {
+        box-shadow: 0 -3em 0 -0.5em, 2em -2em 0 0, 3em 0 0 0.2em, 2em 2em 0 0, 0 3em 0 -1em, -2em 2em 0 -1em, -3em 0 0 -1em, -2em -2em 0 -1em;
+    }
+    37.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 0, 2em 2em 0 0.2em, 0 3em 0 0em, -2em 2em 0 -1em, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    50% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 0em, 0 3em 0 0.2em, -2em 2em 0 0, -3em 0em 0 -1em, -2em -2em 0 -1em;
+    }
+    62.5% {
+        box-shadow: 0 -3em 0 -1em, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 0, -2em 2em 0 0.2em, -3em 0 0 0, -2em -2em 0 -1em;
+    }
+    75% {
+        box-shadow: 0em -3em 0 -1em, 2em -2em 0 -1em, 3em 0em 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0.2em, -2em -2em 0 0;
+    }
+    87.5% {
+        box-shadow: 0em -3em 0 0, 2em -2em 0 -1em, 3em 0 0 -1em, 2em 2em 0 -1em, 0 3em 0 -1em, -2em 2em 0 0, -3em 0em 0 0, -2em -2em 0 0.2em;
+    }
+}</style><style type="text/css">/* This is not a zero-length file! */</style><script charset="utf-8" src="./Разметка рецепта — Разметка текста — HTML Academy_files/183270.js.Без названия"></script><script charset="utf-8" src="./Разметка рецепта — Разметка текста — HTML Academy_files/f80809.js.Без названия"></script></head><body class="course-interface course-interface--light" data-base="/assets/courses/301/" data-leadgen-url="https://htmlacademy.ru/leadgen/touch"><noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-MM92BM" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript><header class="page-header page-header--course"><div class="page-header__inner"><div class="page-header__top"><a class="page-header__logo" href="https://htmlacademy.ru/" aria-label="На главную HTML Academy"><img src="./Разметка рецепта — Разметка текста — HTML Academy_files/logo--small.svg" width="24" height="36" alt="HTML Academy"></a><nav class="main-nav main-nav--course" aria-label="Основное меню" itemscope="itemscope" itemtype="http://www.schema.org/SiteNavigationElement"><div class="course-nav main-nav__course-nav"><a class="course-nav__item course-nav__button course-nav__button--prev" href="https://htmlacademy.ru/courses/301/challenge/1">Предыдущее задание</a><div class="course-nav__item course-nav__list course-nav__item--toggle course-nav__list--collapsed"><b class="course-nav__title">Разметка текста</b><span class="course-nav__stat">2/5</span><div class="course-nav__contents"><a class="course-nav__contents-link" href="https://htmlacademy.ru/courses/301/practice">Вернуться в&nbsp;список вызовов</a><ol class="course-nav__contents-list"><li class="course-nav__contents-item course-nav__contents-item--passed"><a href="https://htmlacademy.ru/courses/301/challenge/1">1.&nbsp;Искусство</a></li><li class="course-nav__contents-item course-nav__contents-item--current"><a href="https://htmlacademy.ru/courses/301/challenge/2">2.&nbsp;Разметка рецепта</a></li><li class="course-nav__contents-item"><a href="https://htmlacademy.ru/courses/301/challenge/3">3.&nbsp;Многоуровневый список покупок</a></li><li class="course-nav__contents-item"><a href="https://htmlacademy.ru/courses/301/challenge/4">4.&nbsp;Вечные правки</a></li><li class="course-nav__contents-item"><a href="https://htmlacademy.ru/courses/301/challenge/5">5.&nbsp;Странная формула</a></li></ol></div></div><a class="course-nav__item course-nav__button course-nav__button--next" href="https://htmlacademy.ru/courses/301/challenge/3">Следующее задание</a></div><ul class="main-nav__list main-nav__list--user "><li class="main-nav__item main-nav__item--user main-nav__item--dropdown"><a class="main-nav__link main-nav__link--user" href="https://htmlacademy.ru/profile/id2083681" title="Илья Дубина" itemprop="url"><img class="main-nav__avatar" alt="Илья Дубина" src="./Разметка рецепта — Разметка текста — HTML Academy_files/20220404_d95b9044-30.jpg" srcset="https://assets.htmlacademy.ru/previews/725/20220404_d95b9044-30.jpg 1x, https://assets.htmlacademy.ru/previews/725/20220404_d95b9044-60.jpg 2x" width="30" height="30"><span class="main-nav__username">Илья Дубина</span></a><ul class="main-nav__list main-nav__list--lvl2"><li class="main-nav__item" itemprop="name"><a class="main-nav__link" href="https://htmlacademy.ru/discounts" title="Мои акции" itemprop="url"><span class="main-nav__icon "><svg aria-hidden="true" width="16" height="16"><use xlink:href="/img/sprites/general.v46.svg#discount"></use></svg></span>Мои акции</a></li><li class="main-nav__item" itemprop="name"><a class="main-nav__link" href="https://htmlacademy.ru/profile/settings" title="Настройки" itemprop="url"><span class="main-nav__icon"><svg aria-hidden="true" width="16" height="16"><use xlink:href="/img/sprites/general.v46.svg#settings"></use></svg></span>Настройки</a></li><li class="main-nav__item main-nav__item--login" itemprop="name"><a class="main-nav__link" href="https://htmlacademy.ru/logout?redirect_url=https://htmlacademy.ru/courses/301/challenge/2" title="Выйти" itemprop="url"><span class="main-nav__icon"><svg aria-hidden="true" width="16" height="16"><use xlink:href="/img/sprites/general.v46.svg#logout"></use></svg></span>Выйти</a></li></ul></li></ul></nav></div></div></header><div class="notice notice--error js--initialization-error hidden"><a class="notice__link" href="https://htmlacademy.ru/courses/301/challenge/2#"><span class="notice__title js--initialization-error__content"></span></a><button class="notice__close" type="button">Закрыть</button></div><main class="course-container course-interface__content task"><div class="course-container__inner"><article class="course-layout js--user-settings" data-autoclosetags="0" data-codefolding="0" data-showinvisibles="0" data-highlightselectedword="0" data-keybinding="0" data-fontsize="16px" data-theme="ace/theme/ha-light-default" data-userid="2083681" data-session-id="027a86d59a11395088d7ca326cb80d9d" data-taskid="5585" data-storage-key="user-2083681.task-5585" data-code-version="d41d8cd98f00b204e9800998ecf8427e"><div class="course-loading-overlay course-layout__loading-overlay hidden"><div class="course-loading-overlay__inner"><span class="course-loading-overlay__image"><svg width="70" height="70" viewBox="0 0 70 70" xmlns="http://www.w3.org/2000/svg"><defs><clippath id="clip-path" transform="translate(-3.2 -3.22)"><circle cx="38.65" cy="38.78" r="34.15" fill="#d5dcf1" stroke-dasharray="0"></circle></clippath></defs><style>.keks-loader-circle { stroke-dasharray: 500; stroke-dashoffset: 1000; animation: dash 1.5s linear reverse infinite; } @keyframes dash { 0% { stroke-dashoffset: 0; }, 25% { stroke-dashoffset: 1000; }, 50% { stroke-dashoffset: 0; }, 75% { stroke-dashoffset: 1000; }, 100% { stroke-dashoffset: 0; } }</style><circle cx="35" cy="33" r="33" transform="matrix(.01053 -.96378 .9652 .01054 2.506 68.344)" fill="#D5DCF1" stroke="#F15A29" stroke-width="3.5"></circle><g transform="matrix(.9237 -.01338 0 .98374 2.38 -2.91)" clip-path="url(#clip-path)"><path d="M55.25 62.93c-1-2.23-2.81-5-4-7.27-.87-1.58-.39-3.35-2.32-3.16 0 0-2.81.84-3.88 1-1.07.16-4.65 3-5.91 3.44-1.55.56-3.29.19-4.93.19-1.686-.555-3.333-1.223-4.93-2-1-.74-7.26-2.32-7.45-1.77-.19.55-6.03 13.66-5.58 14.23.29.28 15 8.57 15.78 8.75 1.113.666 2.188 1.394 3.22 2.18.48.56 12.47-6 12.47-6.93 0 0 7.944-4.177 8.52-4.38 2.1-.74 2.804-.31-1-4.28h.01z" fill="#CF4A27"></path><path d="M41.56 55.18c-.57-.47-1.06.46-.29 1 3.19 2.37 5.86 5.87 6.17 9.84-1.69-.58-3.44-.73-5.11-1.37a.53.53 0 0 0-.77.56 16.56 16.56 0 0 1-.07 4.57 12 12 0 0 1-4.29-2.88c-.29-.36-.87 0-.87.38-.17 1.7-.06 3.25-.9 4.72l-.15.15-.17-.17c-.82-1.46-.71-3-.88-4.68 0-.38-.59-.74-.87-.38a12.11 12.11 0 0 1-4.29 2.86 16.56 16.56 0 0 1-.07-4.56.53.53 0 0 0-.77-.56c-1.67.64-3.42.8-5.11 1.37.31-4 3-7.48 6.17-9.84.77-.56.29-1.49-.29-1-3.77 2.7-6.68 6.8-6.77 11.46a.51.51 0 0 0 .77.46c1.55-.71 3.33-.82 5-1.35-.15 1.61.13 3.14.13 4.79a.54.54 0 0 0 .77.46 21.65 21.65 0 0 0 4.47-2.6 9.28 9.28 0 0 0 1.09 4.37 2.32 2.32 0 0 0 .43.62l.1.06h.07a.59.59 0 0 0 .61-.1 2.1 2.1 0 0 0 .47-.72 9.49 9.49 0 0 0 1-4.31 22.19 22.19 0 0 0 4.48 2.6.54.54 0 0 0 .77-.46c0-1.65.28-3.17.13-4.79 1.68.53 3.45.64 5 1.35a.51.51 0 0 0 .77-.46c-.11-4.67-3-8.77-6.79-11.47z" fill="#F1662A"></path><path d="M35.49 62.47s5-.38 6-1.49c4.65-5.4 9.1-6.7 9.1-6.7l-.68-1.39-14.53 2.8-13.37-2.7v1.49s3.49 1.21 8.24 6.61c1 1.1 5.14 1.38 5.24 1.38" style="isolation:isolate" fill="#A23922" opacity=".5"></path><path d="M22.12 52.88c-1.75 5.5-5.33 8.66-6 14.34" fill="#F1662A"></path><path d="M21.54 52.78c-1.64 5-5.33 9.12-6 14.43-.09.65.64 2 1.07 0 .68-5.21 4.45-9.31 6-14.16.19-.64-.87-.91-1.07-.27zm28.08.55c2 4.57 5.13 8.57 6.4 13.4.2.65 1.4.35 1.31-.29-1.25-4.93-4.7-9-6.83-13.67-.2-.55-1.17-.08-.88.57z" fill="#151841"></path></g><circle class="keks-loader-circle" cx="35" cy="33" r="33" transform="matrix(.01053 -.96378 .9652 .01054 2.506 68.344)" fill="#D5DCF1" stroke-width="3.5" fill-opacity="0" stroke="#2A2F5A"></circle><path d="M54.838 32.26c-.084 4.648-.716 9.52-3.152 13.594-1.08 1.86-1.525 3.2-3.246 4.5-1.44 1.042-4.65.428-7.03 2.334 0 0-3.245 2.79-6.034 2.604-2.79-.186-5.403-2.427-5.403-2.427-1.348-1.293-4.584-1.562-6.574-2.25-2.344-.865-6.036-8.053-6.296-9.3l-.633-2.426c-.808-1.86-.994-3.98-1.98-5.887-.673-1.056-1.178-2.21-1.496-3.422-.55-2.603-1.163-5.28-1.628-7.875-.81-3.896-2.427-10.23.186-13.502 0 0 2.94-.67 8.192 4.845 2.52 2.25 5.04 6.51 8.193 7.7.62-.678 1.18-1.41 1.673-2.186.86.79 1.986 1.22 3.153 1.21.716 0 1.264-.69 1.794-.69.46.105.912.248 1.35.428 1.858.78 1.793-.864 2.872-.78 1.078.083 1.078 2.073 3.42.78l1.163-.018c2.976-3.115 8.908-11.084 13.948-9.96 4.502 1.126-.808 18.533-2.342 22.773" fill="#F15A29"></path><path d="M59.422 11.486c-.93-3.72-5.216-2.334-7.56-.782-2.037 1.452-3.884 3.155-5.495 5.068-.716.78-1.442 1.646-2.25 2.51l-.93 1.042c-.312 0-.624.027-.93.084-.633.084-1.08.605-1.71.353-.35-.208-.664-.472-.93-.78-.554-.41-1.308-.41-1.86 0-.304.488-.882.73-1.442.605-.527-.242-1.07-.444-1.627-.605-.484-.003-.956.147-1.35.428-1.077.688-2.52-.26-3.328-.865-.246-.2-.608-.162-.81.084-.395.632-.84 1.232-1.328 1.795-2.427-1.21-4.138-3.47-5.766-5.45-1.53-1.704-3.177-3.3-4.928-4.78-.823-.765-1.765-1.394-2.79-1.86-.862-.325-1.788-.446-2.706-.352-.81 0-1.162 1.21-1.44 1.86-.434 1.19-.648 2.45-.633 3.72.097 2.626.46 5.237 1.077 7.792.363 1.562.55 3.198.93 4.76.243 1.77.667 3.507 1.265 5.19.812 1.57 1.532 3.19 2.157 4.844.362 1.21.808 2.427 1.078 3.636.312 1.247.735 2.464 1.265 3.635 1.11 2.42 2.566 4.667 4.323 6.668 1.71 1.86 4.585 1.47 6.75 2.51 2.075 1.47 4.325 2.94 6.845 3.292 2.52.353 5.04-1.562 7.208-3.2 1.71-.78 3.608-.78 5.402-1.384 1.795-.605 2.79-2.604 3.608-4.073 1.27-2.134 2.238-4.434 2.874-6.835.503-2.078.79-4.204.855-6.34.05-.433.125-.86.223-1.285 1.22-3.304 2.213-6.687 2.976-10.126.827-3.72 1.813-7.71 1.004-11.158zm-.93 4.584c-.225 2.128-.586 4.24-1.078 6.323-.71 3.194-1.602 6.345-2.67 9.438-.262.617-.407 1.276-.427 1.945-.092 1.935-.34 3.86-.744 5.756-.58 2.34-1.49 4.585-2.706 6.668-.93 1.646-1.794 3.636-3.868 4.156-.93.26-1.796.354-2.614.52.007-.335-.352-.553-.647-.392-.022.012-.042.025-.06.04-.91.582-1.78 1.22-2.614 1.906-1.71 1.21-3.607 2.334-5.672 2.25-1.535-.203-2.994-.792-4.24-1.71-.363-.177-1.44-1.042-1.627-1.126-.716-.52-1.35-.93-2.074-1.47-.363-.26-.716.085-.716.522-.716-.177-1.348-.26-1.98-.428-1.86-.428-2.874-1.86-3.962-3.376-1.68-2.457-2.94-5.18-3.72-8.052-.27-.93-.632-1.86-.93-2.94-.31-1.408-.862-2.754-1.626-3.98-.773-1.45-1.29-3.022-1.526-4.648-.363-1.562-.716-3.2-.995-4.845-.448-2.426-.996-4.76-1.266-7.27-.186-2.158-.186-4.585 1.08-6.51.57-.054 1.146-.026 1.71.083.9.318 1.727.818 2.427 1.47 1.265.93 2.344 2.073 3.506 3.115 2.706 2.334 5.496 7.44 8.555 7.97.693-.605 1.297-1.303 1.796-2.075.79.56 1.707.908 2.668 1.014.508.065 1.022-.06 1.442-.354.54-.408 1.295-.373 1.794.084.67.408 1.52.375 2.158-.084.25-.282.57-.49.93-.604.344.18.657.412.93.688.59.452 1.366.584 2.073.353.447-.083.633-.26 1.08-.353.32.042.646-.02.93-.177 1.525-1.646 2.975-3.375 4.5-4.937 1.676-1.96 3.766-3.527 6.12-4.585 1.44-.604 3.328-.78 3.96.865.428 1.55.486 3.177.167 4.752z" fill="#151841"></path><path d="M48.524 33.04c-.236-.845-.932-1.483-1.795-1.646-.705-.074-1.413-.102-2.12-.083.083-.604.548-2.51-.81-2.333-.716 0-1.44 2.073-1.86 2.603-.715 1.042-1.162.78-1.264-.428-.102-1.208.446-2.854-.55-3.115-.715-.083-1.263 1.293-1.524 2.158-.083.427-.548.78-.362-2.25 0-.782 0-2.855-.447-2.94h-.186c-1.264.085-2.157 4.94-2.52 6.324-.27-1.386-1.71-7.273-2.79-5.98-.14.61-.202 1.234-.185 1.86 0 .427-.084 3.375-.447 2.854-.186-.864-1.162-2.603-1.71-2.334-.995.865-.187 2.074-.447 3.292s-.632 1.47-1.264.354c-.363-.52-.995-2.604-1.71-2.688-1.266-.176-.93 1.73-.93 2.334-.69-.076-1.383-.104-2.075-.083-.852.156-1.558.75-1.86 1.56-.084.177 0 6.668 5.95 6.76.862.043 1.72-.103 2.52-.427.52-.13.995-.558 1.45-.214l6.11.4c.342-.36.847-.51 1.33-.4.925.493 1.934.808 2.976.93 3.06 0 5.765-1.21 6.667-3.98.307-.103-.056-2.353-.15-2.53z" fill="#EFA75B"></path><path d="M23.67 33.998s3.783-.354 4.77.177c1.095.612 1.896 1.642 2.22 2.854-.492.19-1.003.333-1.524.427-.616.09-1.237.15-1.86.177-3.06-.354-3.607-3.636-3.607-3.636zm23.6.51s-3.72-.52-4.772-.082c-1.16.554-2.038 1.564-2.426 2.79l1.44.52c.604.18 1.23.266 1.86.26 3.18-.195 3.897-3.487 3.897-3.487zm-7.03 2.605c.27.084 1.16.428 1.44.52.53.155 1.076.242 1.627.26h.186c2.706-.083 3.608-2.854 3.72-3.29-1.053-.157-2.116-.235-3.18-.233-.487-.017-.973.042-1.442.176-1.128.46-1.992 1.402-2.35 2.567z" fill="#FFF"></path><path d="M32.223 43.26c-.152-1.397-.03-2.81.363-4.157 0 0 .93-2.94 2.343-3.2 3.72-.687 4.054 7.44 4.054 7.44-4.334 1.906-6.76-.084-6.76-.084z" fill="#F47741"></path><path d="M45.204 44.292c-.508-.698-1.296-1.14-2.157-1.21-1.71-.176-7.56 1.126-7.56 1.126v.065c-.772-.205-5.98-1.6-7.56-1.45-.875.04-1.692.45-2.25 1.125-.446.864.084 2 .55 2.938.74 1.35 1.788 2.505 3.058 3.375.48.332 1.045.513 1.627.522 4.492.084 4.77-2.585 4.77-2.464l.075-.465c.186 0-.363 2.79 4.054 2.79.542.102 1.1.073 1.628-.084 1.305-.853 2.39-2 3.17-3.35.41-.92 1.043-1.96.596-2.918z" fill="#EFA75B"></path><path d="M31.963 50.968c-.197-.004-.358-.157-.372-.353-.018-.207.158-.378.364-.354 3.245-.26 3.505-2.156 3.608-2.25-.006-.19.183-.325.362-.26.193.01.35.16.363.354 0 .084 0 1.906 3.422 2 .192.008.348.16.362.353-.018.19-.172.34-.363.353-1.352.11-2.68-.4-3.61-1.386-.095-.096-.16-.22-.185-.353-.982 1.174-2.423 1.866-3.952 1.898z" fill="#151841"></path><path d="M32.14 43.427c.186-.52 3.608.083 3.608.083s2.975-.688 3.422.084c-.05.288-.175.557-.363.78-.515-.056-1.037.004-1.525.178-.333.61-.488 1.304-.446 2-.222.394-.574.7-.995.864-.398-.112-.75-.354-.994-.688.047-.75-.146-1.496-.55-2.13-.27-.26-1.264.084-1.626-.083l-.53-1.088zm6.89.242c-.05.286-.175.556-.363.78-.503-.063-1.015-.012-1.497.148-.333.612-.487 1.305-.446 2-.222.394-.574.7-.995.864-.4-.112-.75-.354-.996-.688.053-.76-.14-1.515-.55-2.157-.268-.26-1.263.084-1.626-.084-.26-.23-.45-.53-.55-.864" fill="#CF4A27"></path><path d="M35.748 47.853c-.587-.226-1.072-.655-1.367-1.21-.022-.634-.144-1.262-.362-1.86h-.567c-.31.073-.636.043-.93-.082-.35-.253-.61-.616-.734-1.03-.082-.17.006-.374.186-.43.172-.083.38 0 .447.177.056.278.215.524.445.69h.586c.37-.086.757-.023 1.08.175.413.585.634 1.284.632 2v.353c.185.177.4.32.632.428.22-.18.42-.382.595-.605-.004-.29.024-.58.083-.865.026-.48.22-.94.55-1.292.506-.235 1.07-.325 1.626-.26.077-.108.14-.227.185-.353-.038-.148.042-.3.186-.353.145-.11.352-.07.447.083.084.084.27.428-.446 1.21-.083.083-.185.176-.27.083-.422-.033-.848-.004-1.264.084-.215.502-.323 1.043-.316 1.59v.176c-.326.57-.824 1.023-1.422 1.293zm-7.198-14.04c-.788-.226-1.61-.314-2.427-.26-1.264 0-2.436.082-2.52.082h-.38v.354s.715 3.55 3.96 3.895c.693.006 1.385-.025 2.074-.093.27-.084 1.71-.428 1.71-.428-.025-1.56-.975-2.956-2.417-3.552zm.53 3.207c-.558.142-1.135.2-1.71.177-1.14-.075-2.16-.728-2.707-1.73-.247-.37-.432-.78-.548-1.21.455 0 1.18-.092 2.073-.175h.596c-.084.688-.242 2.464.483 2.334.725-.13.837-1.46.93-2.13h.112c.937.492 1.647 1.33 1.98 2.334-.388.176-.793.31-1.21.4zm18.365-2.864c-1.104-.145-2.215-.232-3.33-.26-.546-.01-1.093.05-1.626.176-1.166.483-2.08 1.425-2.53 2.604l-.158.79 1.795.623c.558.153 1.132.24 1.71.26h.28c3.245-.177 4.137-3.72 4.137-3.72l.084-.353zm-1.264 1.86c-.54 1.394-2.882 1.646-2.966 1.646-.517-.02-1.03-.11-1.525-.26-.186-.085-.633-.26-1.08-.43.374-.966 1.117-1.746 2.065-2.165 0 .68.158 1.953.81 2.083.65.13.613-1.535.566-2.26.934.005 1.865.064 2.79.177-.11.316-.473.65-.66 1.17z" fill="#151841"></path><path d="M19.26 39.27c.535 1.362 1.56 2.473 2.874 3.115.534.312 1.204-.07 1.207-.69.002-.285-.15-.55-.397-.695-.918-.46-1.65-1.222-2.073-2.158-.344-.957-1.972-.52-1.61.428zm29.45 3.125c1.083-.59 2.01-1.428 2.706-2.446.3-.556-.112-1.228-.743-1.21-.293.007-.56.17-.698.428-.568.776-1.306 1.412-2.158 1.86-.394.23-.517.742-.27 1.125.263.376.773.482 1.163.242z" fill="#EFA75B" stroke-width="13"></path><path d="M16.025 32.436c1.525-1.386 2.427-4.408 2.79-6.835-.084.354 2.613.43 4.138-1.208 1.078-1.125.446-2-.186-3.375-1.71-3.552-4.585-6.323-7.384-8.918-.716-.69-1.44-2.428-2.706-2-.995.353-.93 3.2-.716 4.073 1.09 7.448 4.065 18.263 4.065 18.263zm37.372-.78c-1.704-1.826-2.822-4.12-3.208-6.585 0 .354-2.614.354-4.056-1.29-.995-1.127-.362-1.86.363-3.117 1.86-3.198 4.863-5.718 7.746-8.136.81-.604 1.627-1.47 2.79-.93.994.428.715 2.334.548 3.115-1.083 5.72-2.48 11.376-4.183 16.943z" fill="#FFF"></path><path d="M53.564 20.422c-1.98.51-4.138 1.636-5.105 3.487-.43-2.196 1.645-4.65 3.393-5.832.333-.21.312-.703-.037-.886-.162-.085-.357-.076-.512.022-2.157 1.562-4.417 4.5-3.784 7.188.076.262.354.41.614.325l-.075.28c-.085.603.93.864.994.26.446-2.158 2.706-3.376 4.77-3.897.372-.076.522-.526.27-.81-.133-.15-.342-.204-.53-.138zM17.457 18.06c-.55-.354-.995.428-.55.865 1.433 1.004 3.182 3.05 3.395 4.956-.93-1.86-3.05-2.975-5.105-3.486-.386-.005-.633.41-.445.747.042.076.103.14.176.184 2.073.52 4.324 1.73 4.77 3.896.106.328.5.46.78.26.273.192.653.06.745-.26.735-2.66-1.6-5.728-3.766-7.16z" fill="#F1662A"></path></svg></span><p class="course-loading-overlay__message"><b class="course-loading-overlay__message-title">Загрузка…</b><br><span class="course-loading-overlay__message-text">Через несколько секунд всё будет готово</span></p></div></div><div class="course-layout__sidebar course-theory course-theory--collapsed"><div class="course-theory__inner course-theory__inner--left-stub"><button class="course-theory__close icon-close icon-close--light" type="button">Закрыть</button><ul class="course-tabs course-tabs--non-interactive course-layout__theory-heading js--theory-tabs"><li class="course-tabs__item course-tabs__item--external course-tab course-tab--centered"><span class="course-tab__icon"><svg aria-hidden="true"><use xlink:href="/img/sprites/courses.v11.svg#icon-theory"></use></svg></span><span class="course-tab__title">Теория</span></li><li class="course-tabs__item course-tabs__item--internal course-tab course-tab--centered course-tab--active js--theory-tab__theory"><span class="course-tab__icon"><svg aria-hidden="true"><use xlink:href="/img/sprites/courses.v11.svg#icon-theory"></use></svg></span><span class="course-tab__title">Теория</span></li></ul><form id="search-form" action="https://htmlacademy.ru/courses/search" class="hidden" target="_blank"></form><section class="course-theory__content"><div class="js--theory-pane__theory course-theory__content-inner"><h1 class="course-theory__content-heading">Разметка рецепта</h1><div class="course-theory__content-text"><p>У&nbsp;инструктора Кекса скоро день рождения, и&nbsp;оставлять без подарка его категорически нельзя.</p><p>Недаром считается, что рыба лучший подарок. Вдобавок ко&nbsp;вкусному рыбному печенью давайте порадуем инструктора правильно свёрстанным рецептом.</p><p class="info info--frame-heading info--frame-heading--bytheway info--green">Обратите внимание на&nbsp;вкладку <code>style.css</code>, там есть стиль для класса, который нужно использовать в&nbsp;разметке.</p></div></div></section><div class="course-theory__controls"><button class="button button--close" type="button">Перейти к заданию</button></div></div></div><div class="course-layout__column course-layout__column--left"><ul class="js--course-tabs course-tabs course-layout__course-tabs"><li class="js--editor-tab course-tabs__item course-tab course-tabs__item--limited course-tabs__item--limited-large course-tab--active" data-editor="html"><span class="course-tab__title course-tab__title--indent"><span class="course-tab__title-part course-tab__title-part--active">index.html</span></span><button class="js--editor-split course-tab__button course-tab__button--split hidden" type="button"><svg aria-hidden="true"><use xlink:href="/img/sprites/courses.v11.svg#icon-split"></use></svg><span class="tooltip tooltip--light tooltip--to-top tooltip--with-wrap tooltip--short course-tab__tooltip"><span class="tooltip__wrap">Сплит-режим</span></span></button></li><li class="js--editor-tab course-tabs__item course-tab course-tabs__item--limited course-tabs__item--limited-large course-tab--locked" data-editor="css"><span class="course-tab__title course-tab__title--indent"><span class="course-tab__title-part course-tab__title-part--active">style.css</span></span><button class="js--editor-split course-tab__button course-tab__button--split course-tab__button--active" type="button"><svg aria-hidden="true"><use xlink:href="/img/sprites/courses.v11.svg#icon-split"></use></svg><span class="tooltip tooltip--light tooltip--to-top tooltip--with-wrap tooltip--short course-tab__tooltip"><span class="tooltip__wrap">Сплит-режим</span></span></button></li></ul><div class="course-layout__editors"><div class="js--editor course-editor course-layout__editor" data-tab="html" data-split=""><span class="course-editor__label"><span class="course-editor__label-item">HTML</span><button class="course-editor__label-item course-editor__label-item--interactive hidden js--editor__unsplit-button course-editor__label-item--simple" title="Убрать сплит" type="button"><svg width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg"><g stroke="currentColor" fill="none" fill-rule="evenodd"><path stroke-linecap="round" d="M.6 3.503L3.443.518l2.842 2.985"></path><path d="M3.5 1.5v7.16" stroke-linecap="square"></path></g></svg></button></span><div class="js--code course-editor__item ace_editor ha-light-default ace_focus" id="html-editor" style="font-size: 17.6px; line-height: 20.8px;"><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" style="opacity: 0; font-size: 1px; height: 1px; width: 1px; top: 326px; left: 179px;"></textarea><div class="ace_gutter" aria-hidden="true" style="left: 0px; width: 52px;"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="height: 1e+06px; top: -136px; left: 0px; width: 52px;"><div class="ace_gutter-cell " style="height: 21px; top: 126px;">7<span style="display: none; height: 18px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 147px;">8<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 168px;">9<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 189px;">10<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 210px;">11<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 42px; top: 231px;">12<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 273px;">13<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 294px;">14<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 315px;">15<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 336px;">16<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 357px;">17<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 378px;">18<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 399px;">19<span style="display: none;"></span></div><div class="ace_gutter-cell ace_gutter-active-line " style="height: 42px; top: 420px;">20<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 42px; top: 462px;">21<span style="display: none; height: 18px;" class="ace_fold-widget ace_start ace_open"></span></div><div class="ace_gutter-cell " style="height: 42px; top: 504px;">22<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 546px;">23<span style="display: none;"></span></div></div></div><div class="ace_scroller" style="line-height: 21px; left: 52px; right: 17px; bottom: 0px;"><div class="ace_content" style="top: -10px; left: 0px; width: 557px; height: 448px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 708px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"><div class="ace_bracket ace_start ace_br15" style="height: 21px; width: 52.8047px; top: 294px; left: 373.633px;"></div></div><div class="ace_layer ace_text-layer" style="height: 1e+06px; margin: 0px 4px; top: -126px; left: 0px;"><div class="ace_line_group" style="height: 21px; top: 126px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">  </span><span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">head</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div><div class="ace_line_group" style="height: 21px; top: 147px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">  </span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">body</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div><div class="ace_line_group" style="height: 21px; top: 168px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">    </span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">h1</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">Секретный рецепт рыбного печенья</span><span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">h1</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div><div class="ace_line_group" style="height: 21px; top: 189px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">  </span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">ul</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div><div class="ace_line_group" style="height: 21px; top: 210px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">    </span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">Филе форели, 2 шт</span><span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div><div class="ace_line_group" style="height: 42px; top: 231px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">    </span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">Вода H</span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">sub</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">2</span><span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">sub</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">O или AquaLife</span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">sup</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">®</span><span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">sup</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">, 100 мл</span></div><div class="ace_line" style="height: 21px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div><div class="ace_line_group" style="height: 21px; top: 273px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">    </span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_text ace_tag-whitespace ace_xml"> </span><span class="ace_entity ace_other ace_attribute-name ace_xml">datetime</span><span class="ace_text ace_tag-whitespace ace_xml"> </span><span class="ace_keyword ace_operator ace_attribute-equals ace_xml">=</span><span class="ace_text ace_tag-whitespace ace_xml"> </span><span class="ace_string ace_attribute-value ace_xml">"03.04.2022"</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">Цветная капуста, 100 г</span><span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div><div class="ace_line_group" style="height: 21px; top: 294px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">    </span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">Мука, 1 стакан</span><span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div><div class="ace_line_group" style="height: 21px; top: 315px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">    </span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">Соль, по вкусу</span><span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div><div class="ace_line_group" style="height: 21px; top: 336px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">    </span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">Сливки, 200 мл</span><span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div><div class="ace_line_group" style="height: 21px; top: 357px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">  </span><span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">ul</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div><div class="ace_line_group" style="height: 21px; top: 378px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">    </span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">i</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">Инструкция по приготовлению:</span><span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">i</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div><div class="ace_line_group" style="height: 21px; top: 399px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">    </span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">ol</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div><div class="ace_line_group" style="height: 42px; top: 420px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">    </span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">Форель помыть, обсушить и варить </span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">strong</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">10 минут</span></div><div class="ace_line" style="height: 21px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">strong</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div><div class="ace_line_group" style="height: 42px; top: 462px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">    </span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">Измельчить рыбу в блендере, смешать со сливками и </span></div><div class="ace_line" style="height: 21px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_text ace_xml">мукой</span><span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div><div class="ace_line_group" style="height: 42px; top: 504px;"><div class="ace_line" style="height: 21px;"><span class="ace_text ace_xml">    </span><span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">Сформировать лепёшки и выпекать в духовке 20 минут при </span></div><div class="ace_line" style="height: 21px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="ace_meta ace_tag ace_punctuation ace_tag-open ace_xml">&lt;</span><span class="ace_meta ace_tag ace_tag-name ace_xml">span</span><span class="ace_text ace_tag-whitespace ace_xml"> </span><span class="ace_entity ace_other ace_attribute-name ace_xml">class</span><span class="ace_keyword ace_operator ace_attribute-equals ace_xml">=</span><span class="ace_string ace_attribute-value ace_xml">"warning"</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_text ace_xml">180 градусах</span><span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">span</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span><span class="ace_meta ace_tag ace_punctuation ace_end-tag-open ace_xml">&lt;/</span><span class="ace_meta ace_tag ace_tag-name ace_xml">li</span><span class="ace_meta ace_tag ace_punctuation ace_tag-close ace_xml">&gt;</span></div></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_animate-blinking"><div class="ace_cursor" style="display: block; top: 315px; left: 127px; width: 9px; height: 21px; animation-duration: 1000ms;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="width: 22px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 22px; height: 640px;">&nbsp;</div></div><div class="ace_scrollbar ace_scrollbar-h" style="display: none; height: 22px; left: 52px; right: 17px;"><div class="ace_scrollbar-inner" style="height: 22px; width: 557px;">&nbsp;</div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;">הההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההה</div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></div></div><div class="js--editor course-editor course-layout__editor" data-tab="css" data-split=""><span class="course-editor__label"><span class="course-editor__label-item">CSS</span><button class="course-editor__label-item course-editor__label-item--interactive js--editor__unsplit-button course-editor__label-item--simple" title="Убрать сплит" type="button"><svg width="7" height="10" viewBox="0 0 7 10" xmlns="http://www.w3.org/2000/svg"><g stroke="currentColor" fill="none" fill-rule="evenodd"><path stroke-linecap="round" d="M.6 3.503L3.443.518l2.842 2.985"></path><path d="M3.5 1.5v7.16" stroke-linecap="square"></path></g></svg></button></span><div class="js--code course-editor__item ace_editor ha-light-default" id="css-editor" style="font-size: 17.6px; line-height: 20.8px;"><textarea class="ace_text-input" wrap="off" autocorrect="off" autocapitalize="off" spellcheck="false" readonly="" style="opacity: 0; font-size: 1px; height: 1px; width: 1px; top: 31px; left: 56px;"></textarea><div class="ace_gutter" aria-hidden="true" style="left: 0px; width: 52px;"><div class="ace_layer ace_gutter-layer ace_folding-enabled" style="height: 1e+06px; top: 10px; left: 0px; width: 52px;"><div class="ace_gutter-cell ace_gutter-active-line " style="height: 21px; top: 0px;">1<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 21px;">2<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 42px;">3<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 63px;">4<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 84px;">5<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 105px;">6<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 126px;">7<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 147px;">8<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 168px;">9<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 189px;">10<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 210px;">11<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 231px;">12<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 252px;">13<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 273px;">14<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 294px;">15<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 315px;">16<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 336px;">17<span style="display: none;"></span></div><div class="ace_gutter-cell " style="height: 21px; top: 357px;">18<span style="display: none;"></span></div></div></div><div class="ace_scroller" style="line-height: 21px; left: 52px; right: 0px; bottom: 0px;"><div class="ace_content" style="top: 10px; left: 0px; width: 574px; height: 446px;"><div class="ace_layer ace_print-margin-layer"><div class="ace_print-margin" style="left: 708px; visibility: hidden;"></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_text-layer" style="height: 1e+06px; margin: 0px 4px; top: 0px; left: 0px;"><div class="ace_line_group" style="height: 21px; top: 0px;"><div class="ace_line" style="height: 21px;"><span class="ace_constant">body</span> <span class="ace_paren ace_lparen">{</span></div></div><div class="ace_line_group" style="height: 21px; top: 21px;"><div class="ace_line" style="height: 21px;">  <span class="ace_support ace_type">width</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_constant ace_numeric">400</span><span class="ace_keyword">px</span><span class="ace_punctuation ace_operator">;</span></div></div><div class="ace_line_group" style="height: 21px; top: 42px;"><div class="ace_line" style="height: 21px;">  <span class="ace_support ace_type">margin</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_constant ace_numeric">0</span><span class="ace_punctuation ace_operator">;</span></div></div><div class="ace_line_group" style="height: 21px; top: 63px;"><div class="ace_line" style="height: 21px;">  <span class="ace_support ace_type">padding</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_constant ace_numeric">0</span> <span class="ace_constant ace_numeric">10</span><span class="ace_keyword">px</span><span class="ace_punctuation ace_operator">;</span></div></div><div class="ace_line_group" style="height: 21px; top: 84px;"><div class="ace_line" style="height: 21px;"></div></div><div class="ace_line_group" style="height: 21px; top: 105px;"><div class="ace_line" style="height: 21px;">  <span class="ace_support ace_type">font-family</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_string ace_start">"</span><span class="ace_string">Arial</span><span class="ace_string ace_end">"</span>, <span class="ace_support ace_constant ace_fonts">sans-serif</span><span class="ace_punctuation ace_operator">;</span></div></div><div class="ace_line_group" style="height: 21px; top: 126px;"><div class="ace_line" style="height: 21px;">  <span class="ace_support ace_type">font-size</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_constant ace_numeric">16</span><span class="ace_keyword">px</span><span class="ace_punctuation ace_operator">;</span></div></div><div class="ace_line_group" style="height: 21px; top: 147px;"><div class="ace_line" style="height: 21px;">  <span class="ace_support ace_type">line-height</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_constant ace_numeric">20</span><span class="ace_keyword">px</span><span class="ace_punctuation ace_operator">;</span></div></div><div class="ace_line_group" style="height: 21px; top: 168px;"><div class="ace_line" style="height: 21px;"><span class="ace_paren ace_rparen">}</span></div></div><div class="ace_line_group" style="height: 21px; top: 189px;"><div class="ace_line" style="height: 21px;"></div></div><div class="ace_line_group" style="height: 21px; top: 210px;"><div class="ace_line" style="height: 21px;"><span class="ace_constant">h1</span> <span class="ace_paren ace_lparen">{</span></div></div><div class="ace_line_group" style="height: 21px; top: 231px;"><div class="ace_line" style="height: 21px;">  <span class="ace_support ace_type">font-size</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_constant ace_numeric">18</span><span class="ace_keyword">px</span><span class="ace_punctuation ace_operator">;</span></div></div><div class="ace_line_group" style="height: 21px; top: 252px;"><div class="ace_line" style="height: 21px;"><span class="ace_paren ace_rparen">}</span></div></div><div class="ace_line_group" style="height: 21px; top: 273px;"><div class="ace_line" style="height: 21px;"></div></div><div class="ace_line_group" style="height: 21px; top: 294px;"><div class="ace_line" style="height: 21px;"><span class="ace_variable">.warning</span> <span class="ace_paren ace_lparen">{</span></div></div><div class="ace_line_group" style="height: 21px; top: 315px;"><div class="ace_line" style="height: 21px;">  <span class="ace_support ace_type">color</span><span class="ace_punctuation ace_operator">:</span> <span class="ace_support ace_constant ace_color">red</span><span class="ace_punctuation ace_operator">;</span></div></div><div class="ace_line_group" style="height: 21px; top: 336px;"><div class="ace_line" style="height: 21px;"><span class="ace_paren ace_rparen">}</span></div></div><div class="ace_line_group" style="height: 21px; top: 357px;"><div class="ace_line" style="height: 21px;"></div></div></div><div class="ace_layer ace_marker-layer"></div><div class="ace_layer ace_cursor-layer ace_hidden-cursors"><div class="ace_cursor" style="display: block; top: 0px; left: 4px; width: 9px; height: 21px;"></div></div></div></div><div class="ace_scrollbar ace_scrollbar-v" style="display: none; width: 22px; bottom: 0px;"><div class="ace_scrollbar-inner" style="width: 22px; height: 388px;">&nbsp;</div></div><div class="ace_scrollbar ace_scrollbar-h" style="display: none; height: 22px; left: 52px; right: 0px;"><div class="ace_scrollbar-inner" style="height: 22px; width: 574px;">&nbsp;</div></div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: hidden;"><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font: inherit; overflow: visible;">הההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההההה</div><div style="height: auto; width: auto; top: 0px; left: 0px; visibility: hidden; position: absolute; white-space: pre; font-style: inherit; font-variant: inherit; font-stretch: inherit; font-size: inherit; line-height: inherit; font-family: inherit; overflow: visible;">XXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX</div></div></div></div></div><div class="course-editor-controls"><button class="course-editor-controls__item course-editor-controls__item--icon course-editor-controls__item--save" type="button">
+    Сохранить код
+    <span class="js--tooltip tooltip tooltip--light tooltip--short tooltip--notification hidden">Код сохранён</span></button><button class="course-editor-controls__item course-editor-controls__item--icon course-editor-controls__item--reset" type="button">
+    Сбросить код
+    <span class="js--tooltip tooltip tooltip--light tooltip--short tooltip--notification hidden">Код сброшен</span></button></div><div class="js--feedback course-unhappy"><button class="js--feedback-btn course-unhappy__button" type="button"><span class="sr-only">Поплакать</span><svg aria-hidden="true"><use xlink:href="/img/sprites/courses.v11.svg#unhappy"></use></svg></button><div class="js--feedback-modal course-unhappy__modal course-unhappy__modal--step-one"><form method="POST" action="https://htmlacademy.ru/courses/301/run/2/signal" class="course-unhappy__form form"><input type="hidden" name="ha_name" value="ha624d5a3638866"><input type="hidden" name="ha_value" value="334fe9635027b63d0ea09e4ce54085bb"><p class="course-unhappy__text">Что в&nbsp;задании вам не&nbsp;понравилось?</p><div class="course-unhappy__slide"><div class="course-unhappy__wrap"><div class="course-unhappy__list"><label class="checkbox checkbox--small"><input class="checkbox__input" name="problems" value="1" type="checkbox"><span class="checkbox__text">Не работает проверка кода</span></label><label class="checkbox checkbox--small"><input class="checkbox__input" name="problems" value="2" type="checkbox"><span class="checkbox__text">Задание слишком сложное</span></label><label class="checkbox checkbox--small"><input class="checkbox__input" name="problems" value="3" type="checkbox"><span class="checkbox__text">Непонятная теория</span></label><label class="checkbox checkbox--small"><input class="js--feedback-other-checkbox checkbox__input" name="problems" value="0" type="checkbox"><span class="checkbox__text">Другое (сейчас напишу)</span></label></div><div class="course-unhappy__message"><label class="sr-only" for="id-message">Другое (сейчас напишу)</label><textarea tabindex="-1" class="field field--area" id="id-message" name="message" placeholder="Например, опечатка в слове «Заголовок»"></textarea></div></div></div><button class="course-unhappy__control course-unhappy__control--prev" type="button"><span class="sr-only">Назад</span><svg aria-hidden="true"><use xlink:href="/img/sprites/landings.v8.svg#arrow"></use></svg></button><button class="course-unhappy__control course-unhappy__control--next" type="button" disabled=""><span class="sr-only">Вперёд</span><svg aria-hidden="true"><use xlink:href="/img/sprites/landings.v8.svg#arrow"></use></svg></button><button class="js--submit-btn button" disabled="">Отправить</button></form><p class="course-unhappy__result hidden">Спасибо! Мы&nbsp;скоро всё исправим)</p></div></div></div><div class="course-layout__column course-layout__column--right"><span class="course-separator-control"><svg aria-hidden="true"><use xlink:href="/img/sprites/courses.v11.svg#icon-arrows-separator"></use></svg></span><div class="course-browser course-layout__browser"><div class="course-browser__menu"><span class="course-browser__menu-item course-browser__address"><span class="course-browser__menu-item-inner"><span class="course-browser__address-text">Разметка рецепта</span></span></span><button class="js--autorun course-browser__menu-item course-browser__menu-button course-browser__menu-button--text-with-icon course-browser__menu-button--autorun course-browser__menu-button--autorun-on" title="Выключить автозапуск" type="button"><span class="course-browser__menu-item-inner"><svg aria-hidden="true"><use xlink:href="/img/sprites/courses.v11.svg#icon-autorun"></use></svg> Автозапуск
+    </span></button><button class="course-browser__menu-item course-browser__menu-button course-browser__menu-button--expand" type="button" title="Увеличить на максимальную ширину"><svg xmlns="http://www.w3.org/2000/svg" width="11" height="11" viewBox="0 0 11 11"><path d="M1.375 5.125v4.5h4.5m3.75-3.75v-4.5h-4.5" fill="none" fill-rule="evenodd" stroke="currentColor"></path></svg></button></div><div class="course-browser__notification js--browser-change-heading hidden"><p class="course-browser__notification-text">Код изменился, нажмите «Обновить» или включите автозапуск.</p><button class="course-browser__notification-button course-browser__notification-button--refresh js--close" type="button"><svg aria-hidden="true"><use xlink:href="/img/sprites/courses.v11.svg#icon-refresh"></use></svg> Обновить</button></div><div class="course-browser__content"><div class="course-browser__modal js--browser-modal"><div class="course-browser__notification course-browser__modal-heading js--browser-modal-heading"><p class="course-browser__notification-text">Вы&nbsp;перешли на&nbsp;другую страницу</p><button class="course-browser__notification-button js--close" type="button">← Вернуться обратно</button></div><div class="course-browser__zoomer"><iframe class="js--preview-document course-browser__content course-browser__zoomer-element" style="width: 100%; height: 100%; transform: scale(1);" src="./Разметка рецепта — Разметка текста — HTML Academy_files/saved_resource.html"></iframe><p class="course-browser__focus-message">
+      Кликните внутри мини-браузера, чтобы поставить фокус в это окно.
+    </p></div></div><div class="course-browser__menu course-browser__menu--vertical"><button class="course-browser__menu-item course-browser__menu-button course-browser__menu-button--increase" type="button" disabled="" title="Увеличить"><span class="course-browser__menu-item-inner">Увеличить</span></button><span class="course-browser__menu-item course-browser__zoom"><span class="course-browser__menu-item-inner">100%</span></span><button class="course-browser__menu-item course-browser__menu-button course-browser__menu-button--decrease" type="button" title="Уменьшить"><span class="course-browser__menu-item-inner">Уменьшить</span></button></div><div class="js--validation-view course-browser__results-restriction course-browser__results-restriction--mini"><span class="tooltip tooltip--light tooltip--short course-browser__results-restriction-tooltip"><span class="js--tooltip-text"></span><button class="js--validation-view-close course-browser__results-restriction-tooltip-close icon-close" type="button">Закрыть</button></span></div></div></div><div class="course-browser course-layout__browser"><ul class="course-tabs course-browser__course-tabs js--result-tabs"><li class="course-tabs__item course-tab course-tabs__item--full-width course-tab--active" data-result="solution"><span class="course-tab__title course-tab__title--active">Образец</span></li><li class="course-tabs__item course-tab course-tabs__item--full-width" data-result="attempt"><span class="course-tab__title">Результат</span></li><li class="course-tabs__item course-tab course-tabs__item--full-width" data-result="overlay"><span class="course-tab__title">Наложение</span></li><li class="course-tabs__item course-tab course-tabs__item--full-width" data-result="diff"><span class="course-tab__title">Различия</span></li><li class="course-tabs__item course-tab course-tabs__item--narrow course-tab--centered" data-result="info" title="Информация"><span class="course-tab__title">?</span></li></ul><div class="course-browser__results"><p class="course-browser__results-initial course-browser__results-initial--loader hidden" data-tab="theory-overlay"><span class="course-browser__results-initial-note"></span></p><p class="course-browser__results-initial course-browser__results-initial--loader hidden" data-tab="preload"><img width="70" height="70" src="./Разметка рецепта — Разметка текста — HTML Academy_files/keks-loader.v3.svg"><span class="course-browser__results-initial-note">Загрузка образца</span></p><p class="course-browser__results-initial course-browser__results-initial--with-arrow hidden" data-tab="initial"><span class="course-browser__results-initial-alert">Нажмите кнопку «Сравнить»</span>, чтобы отправить ваше решение на проверку.</p><p class="course-browser__results-initial hidden" data-tab="failed-preload">Не удалось загрузить образец. Попробуйте позже.</p><img class="course-browser__result course-browser__result--active" data-tab="solution" data-image="solution" src="./Разметка рецепта — Разметка текста — HTML Academy_files/c4fd6b61d6b0ffe7332774a565d65348.png" alt=""><img class="course-browser__result" data-tab="attempt" data-image="attempt" src="https://htmlacademy.ru/courses/301/challenge/2" alt=""><img class="course-browser__result" data-tab="overlay" data-image="solution" src="./Разметка рецепта — Разметка текста — HTML Academy_files/c4fd6b61d6b0ffe7332774a565d65348.png" alt=""><img class="course-browser__result course-browser__result--overlay" data-tab="overlay" data-image="attempt" src="https://htmlacademy.ru/courses/301/challenge/2" alt=""><img class="course-browser__result" data-tab="diff" data-image="diff" src="https://htmlacademy.ru/courses/301/challenge/2" alt=""><div class="course-browser__results-description hidden" data-tab="info"><p><b>Образец</b> — интерфейс, который вам нужно получить.</p><p><b>Результат</b> — то, как видит ваш код наш сервер. Может отличаться от того, что в мини-браузере. Сравнение происходит между этим результатом и образцом.</p><p><b>Наложение</b> — полупрозрачный результат отображается над образцом.</p><p><b>Различия</b> — карта различий между образцом и результатом.</p></div></div><div class="course-challenge-controls course-browser__course-challenge-controls"><div class="js--annotations course-task-stats course-task-stats--left-aligned course-task-stats--disabled"><span class="course-task-stats__indicator"><svg width="12" height="12" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path fill-rule="evenodd" clip-rule="evenodd" d="M15 8C15 11.866 11.866 15 8 15C4.13403 15 1 11.866 1 8C1 4.13403 4.13403 1 8 1C11.866 1 15 4.13403 15 8ZM16 8C16 12.4183 12.4183 16 8 16C3.58173 16 0 12.4183 0 8C0 3.58173 3.58173 0 8 0C12.4183 0 16 3.58173 16 8ZM6.7287 3.88849C6.6958 3.59229 6.92761 3.33325 7.22565 3.33325H8.77502C9.07306 3.33325 9.30487 3.59229 9.27197 3.88849L8.71643 8.88849C8.68829 9.14166 8.47424 9.33325 8.21948 9.33325H7.78119C7.52643 9.33325 7.31238 9.14166 7.28424 8.88849L6.7287 3.88849ZM9.33368 12.0001C9.33368 12.7365 8.73669 13.3334 8.00031 13.3334C7.26392 13.3334 6.66699 12.7365 6.66699 12.0001C6.66699 11.2637 7.26392 10.6667 8.00031 10.6667C8.73669 10.6667 9.33368 11.2637 9.33368 12.0001Z" fill="currentColor"></path></svg><span class="js--annotations-counter course-task-stats__counter"></span></span><div class="course-task-stats__scroller-wrapper"><div class="course-task-stats__scroller"><ul class="js--annotations-list course-task-stats__list"></ul></div></div></div><div class="course-challenge-controls__progress hidden"><span class="course-challenge-controls__progress-text"></span><span class="progress progress--large progress--blue course-challenge-controls__progress-element"><progress class="progress__element" value="0" max="100">Выполнено 0%.</progress></span></div><button class="course-challenge-controls__button button button--green js--server-check" type="button"><span class="js--server-check__message">
+                      Сравнить
+                  </span><span class="tooltip tooltip--light tooltip--short tooltip--notification js--server-check__timeout hidden"></span></button></div><span class="course-browser__results-notice" style="display:none">Код был изменён</span></div></div></article></div><div class="course-interface__overlay"></div></main><div class="course-extra"><div class="course-extra__inner"><p class="course-extra__text">Если у&nbsp;вас возникли сложности во&nbsp;время прохождения задания, то&nbsp;вы&nbsp;можете обратиться за&nbsp;помощью <a href="http://forum.academy/c/kursy/93-category" target="_blank">на&nbsp;наш форум</a> или задать вопрос в&nbsp;<a href="https://t.me/+V8r93iiYokoy68vM">Телеграм-чате</a>.</p></div></div><script src="./Разметка рецепта — Разметка текста — HTML Academy_files/htmlacademy-task.v23.js.Без названия" data-task-type="html-css-challenge" data-assets-path="https://assets.htmlacademy.ru/scripts/courses-spa/"></script><script>HtmlacademyTask.setRoutes({task:'/courses/301/challenge/2',check:'/checks/tasks/5585'});</script><script>HtmlacademyTask.setup(function(){this.setView(HtmlCssChallengeView,function(){this.disableEditor("css"),this.setSplitEditor("css")}),this.setRunner(HtmlCssRunner),this.setChecker(HtmlCssChallengeChecker)});</script><script>HtmlacademyTask.setupAssets({"style.css":"body{margin:0;min-width:960px;font-family:\"Montserrat\",\"Helvetica\",\"Arial\",sans-serif;font-size:16px;line-height:32px;color:#222;background-color:#f2f4f6;background-image:url(img\/hero-bg.jpg);background-repeat:no-repeat;background-position:top center}.container{max-width:928px;margin:0 auto;padding:0 16px}.page-header{margin:0 0 160px;padding:32px 0}.page-footer .container,.page-header .container{max-width:1408px;text-align:right}.page-header a{margin-left:56px;color:#288be6;text-decoration:none}.header-email{padding-left:30px;background-image:url(img\/icon-email-header.svg)}.header-phone{padding-left:25px;background-image:url(img\/icon-phone-header.svg)}.hero-image{margin-bottom:620px}.hero-image .container{max-width:1408px;text-align:center}.heading{margin:0 0 16px;font-family:\"Old Standard TT\",\"Times\",\"Times New Roman\",serif;font-size:88px;line-height:96px;font-weight:400}.hero-image p{margin:0;font-size:32px;line-height:48px}.intro{margin:0 0 120px}.subheading{margin:0 0 56px;font-family:\"Old Standard TT\",\"Times\",\"Times New Roman\",serif;font-size:64px;line-height:80px;font-weight:400}.subheading,.user-image{text-align:center}.intro h3,.portfolio h3{margin:0 0 12px;font-size:28px;line-height:40px;font-weight:500}.intro p,.user-image{margin:0 0 32px}.skills-list{margin:0;padding:0}.page-footer a,.page-header a,.skills-list dt{background-repeat:no-repeat;background-position:left}.skills-list dt{padding-left:32px}.skill-html{background-image:url(img\/icon-html.svg)}.skill-css{background-image:url(img\/icon-css.svg)}.level{margin:4px 0 16px;padding:0;height:14px;font-size:0;background-color:#fff;border:1px solid #86c3fa;border-radius:8px}.level div{margin:1px;height:12px;background-color:#288be6;border-radius:6px}.portfolio{margin:0 0 120px}.projects{margin:0;padding:0;list-style:none}.projects li{margin:0 0 80px}.project-image{text-align:center}.project-image,.projects p{margin:0 0 24px}.button{padding:6px 20px;display:inline-block;vertical-align:baseline;text-decoration:none;text-transform:uppercase;border-radius:4px;background-color:#288be6;color:#fff}.page-footer{padding:40px 0;background-color:#00417d;color:#fff}.page-footer a{margin-left:56px;color:inherit;text-decoration:none}.footer-email{padding-left:30px;background-image:url(img\/icon-email-footer.svg)}.footer-phone{padding-left:25px;background-image:url(img\/icon-phone-footer.svg)}"});</script><footer class="page-footer "><div class="page-footer__inner"><div class="page-footer__contacts"><a class="page-footer__logo" href="https://htmlacademy.ru/" rel="home" aria-label="На главную HTML Academy"><img src="./Разметка рецепта — Разметка текста — HTML Academy_files/logo.v2.svg" width="161" height="55" alt="Логотип HTML Academy"></a><ul class="social-links social-links--contrast social-links--gutters page-footer__social-links"><li><a class="social-links__link" href="https://vk.com/htmlacademy" target="_blank" rel="noopener nofollow" title="Наш Вконтакте"><span class="sr-only">Наша группа в&nbsp;ВК</span><svg width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M15.83 25.176h1.63s.45-.09.723-.362c.27-.27.18-.724.18-.724s0-2.17.996-2.533c.994-.362 2.26 2.08 3.708 3.076.995.724 1.81.543 1.81.543l3.618-.09s1.9-.09.995-1.628c-.09-.09-.542-1.086-2.713-3.166-2.262-2.17-1.99-1.81.814-5.428 1.72-2.262 2.353-3.62 2.172-4.16-.18-.544-1.447-.453-1.447-.453h-4.16s-.272 0-.544.09c-.18.09-.36.453-.36.453s-.634 1.72-1.54 3.257c-1.808 3.076-2.532 3.257-2.894 3.076-.724-.452-.543-1.81-.543-2.804 0-2.985.452-4.252-.905-4.614-.452-.09-.814-.18-1.9-.18-1.447 0-2.714 0-3.438.36-.452.272-.814.725-.633.815.27 0 .905.18 1.176.633.452.543.452 1.9.452 1.9s.27 3.528-.543 3.98c-.543.27-1.357-.27-2.985-3.166-.814-1.447-1.447-3.076-1.447-3.076s.09-.27-.18-.452-.634-.27-.634-.27l-3.89.09s-.543 0-.814.27c-.18.27 0 .724 0 .724S5.608 18.483 9.045 22.1c3.166 3.258 6.785 3.077 6.785 3.077z"></path></svg></a></li><li><a class="social-links__link" href="https://www.youtube.com/user/htmlacademyru" rel="noopener nofollow" target="_blank" title="Наш канал на YouTube"><svg width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M28.54,6.92a3.8,3.8,0,0,0-2.14-1c-1.76-.2-3.54-.3-5.32-.35s-3.55,0-5.33,0-3.55,0-5.33,0S6.87,5.76,5.11,6A3.79,3.79,0,0,0,3,6.92,4,4,0,0,0,1.78,9a20.08,20.08,0,0,0-.44,3.38c-.06,1.15-.07,2.29-.07,3.39s0,2.24.06,3.39a19.91,19.91,0,0,0,.44,3.38A4,4,0,0,0,3,24.57a3.79,3.79,0,0,0,2.13,1c1.76.2,3.54.3,5.32.35s3.55,0,5.33,0,3.55,0,5.33,0,3.56-.15,5.32-.35a3.79,3.79,0,0,0,2.13-1,4,4,0,0,0,1.2-2.05,20.05,20.05,0,0,0,.44-3.38c.06-1.13.06-2.28.06-3.39h0v-.06h0A30.38,30.38,0,0,0,29.74,9a4,4,0,0,0-1.2-2.05Z"></path><path d="M21.25,15.2l-4.93-2.57L12.24,10.5l-.45-.24V20.65l.45-.23,4.51-2.33,4.51-2.34.52-.27Z" fill="#2d2d44"></path></svg></a></li><li><a class="social-links__link" href="https://twitter.com/htmlacademy_ru" target="_blank" rel="noopener nofollow" title="Наш Твитер"><span class="sr-only">Наша страница в&nbsp;Twitter</span><svg width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M29 9.3c-.9.4-1.8.7-2.8.8 1-.6 1.8-1.6 2.2-2.7-1 .6-2 1-3.1 1.2-1-1-2.3-1.6-3.7-1.6-2.7 0-4.9 2.2-4.9 4.9 0 .4 0 .8.1 1.1-4.1-.2-7.7-2.2-10.1-5.1-.5.7-.7 1.6-.7 2.5 0 1.7.9 3.2 2.2 4.1-.8 0-1.6-.2-2.2-.6v.1c0 2.4 1.7 4.4 4 4.8-.4.1-.8.2-1.3.2-.3 0-.6 0-.9-.1.6 2 2.4 3.4 4.6 3.4-1.7 1.3-3.8 2.1-6.1 2.1-.4 0-.8 0-1.2-.1 2.2 1.4 4.8 2.2 7.5 2.2 9.1 0 14-7.5 14-14v-.6c.9-.7 1.7-1.6 2.4-2.6"></path></svg></a></li><li><a class="social-links__link" href="tg://resolve?domain=htmlacademy" rel="noopener nofollow" target="_blank" title="Наш Телеграм"><span class="sr-only">Наш канал в&nbsp;Telegram</span><svg width="24" height="24" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg"><path d="M 23.326 28.341 C 23.121 28.341 22.919 28.28 22.743 28.163 L 16.144 23.686 L 12.605 26.233 C 12.013 26.658 11.179 26.359 10.992 25.654 L 9.217 18.921 L 2.866 16.491 C 2.119 16.206 1.963 15.218 2.584 14.715 C 2.664 14.648 2.756 14.594 2.853 14.557 L 26.998 4.948 C 27.734 4.636 28.533 5.239 28.436 6.033 C 28.431 6.059 28.428 6.087 28.422 6.114 L 24.348 27.498 C 24.254 27.986 23.826 28.341 23.326 28.341 Z M 16.723 21.568 L 22.604 25.557 L 25.773 8.917 L 14.319 19.938 L 16.696 21.55 C 16.706 21.556 16.714 21.562 16.723 21.568 Z M 11.83 20.683 L 12.619 23.664 L 14.313 22.444 L 12.092 20.937 C 11.991 20.87 11.902 20.782 11.83 20.683 Z M 6.096 15.501 L 10.456 17.169 C 10.768 17.289 11.003 17.551 11.089 17.874 L 11.642 19.97 C 11.668 19.727 11.78 19.5 11.956 19.329 L 22.868 8.828 L 6.096 15.501 Z"></path></svg></a></li></ul><a class="page-footer__sk" href="https://sk.ru/" target="_blank" rel="noopener nofollow"><span class="sr-only">Инновационный центр Сколково</span><svg width="167" height="120" viewBox="0 0 167 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M5 115h157V5H5zM0 0h167v120H0zm56.77 73.37c-5.26 3.84-12.31 4.34-15.17 4.34v-.02c-19.89 0-23.36-11.52-23.36-18.31h11c0 3.09 1.66 8.89 11.61 8.89 5.46 0 11.46-1.35 11.46-7.08 0-4.29-4.19-5.35-10-6.78l-11-2.71c-7.76-1.88-12.21-6.49-12.21-14.77 0-6.03 3.3-16.81 21-16.81 8.18 0 13.43 2.63 16.67 6.11v-4.68h10.67v29.54l13.4-15.38h13L79.59 51.39l14.62 24.87H81.47l-9.65-17.4-4.43 4.59v12.83H56.77zM35.51 41.82l13.33 3.25v-.04a30.67 30.67 0 017.93 3v-10.2h-6.35c-.29-2.49-1.2-8.29-11.15-8.29-4.37 0-9.57 1.66-9.57 6.56 0 4.28 3.54 5.19 5.81 5.72zm-13.98 53.6a5.092 5.092 0 01-1.91-.41l.03 3.41c.708.26 1.456.395 2.21.4 2.9 0 4.32-1.42 6-5.11l6.08-13.37H29.7l-4 9.54-4.1-9.54h-4.39l5.31 11.19a5.805 5.805 0 01.84 2.34 1.605 1.605 0 01-.569 1.184 1.615 1.615 0 01-1.261.366zm20.62-10.1h3.59v13.12h-3.59v-5.16a18.856 18.856 0 01-4.2.59c-2.89 0-4.4-1.76-4.4-4.55v-4h3.59v3.26c0 1.9.41 2.57 2 2.57a16.253 16.253 0 003-.39zm14.42 11.85c.01.434.094.864.25 1.27l3.66-.04a8.9 8.9 0 01-.46-3.56v-5.67c0-3.66-3.07-4.27-5.72-4.27-3.79 0-5.87 1.5-6.07 4.42h3.38c.25-1.5.99-2 2.59-2 1.6 0 2.37.68 2.37 1.75 0 1.07-.87 1.27-3.21 1.58-2.59.33-5.72.74-5.72 4.17 0 2.5 1.78 4 4.68 4a5.998 5.998 0 004.25-1.65zm-2.724-4.436L54 92.71l.01.04a7.126 7.126 0 002.54-.69v1.48c0 1.92-1.32 2.92-3.2 2.92-1.26 0-2-.66-2-1.75 0-1.583 1.287-1.785 2.495-1.976zM68.87 98.77c-4 0-6.69-2.69-6.69-6.79s2.67-7 6.74-7c3.51 0 5.85 1.91 6.15 5h-3.53a2.479 2.479 0 00-2.59-2.26c-2 0-3.13 1.57-3.13 4.27 0 2.7 1.12 4.12 3 4.12 1.55 0 2.52-.92 2.8-2.65h3.48a5.86 5.86 0 01-6.28 5.39zm14.47-.33V88.09h4.32v-2.77H75.43v2.77h4.32v10.35zm14.39 0v-5.52h-5.06v5.52h-3.59V85.32h3.59v4.76h5.06v-4.76h3.58v13.12zm14.97-8.88v8.88h3.46V85.32h-4.09l-4.68 8.87v-8.87h-3.46v13.12h4.1zm15.05 8.88l-3.78-5.64-1.61 1.62v4.02h-3.53V85.32h3.53v5.19l4.81-5.19h4.24l-5.08 5.09 5.8 8.03z" fill-rule="evenodd"></path></svg></a></div><div class="page-footer__block-group" role="navigation" aria-label="Дополнительное меню" itemscope="" itemtype="http://schema.org/SiteNavigationElement"><div class="page-footer__item page-footer__item--courses"><h3 class="page-footer__header">Практикум</h3><ul class="page-footer__list"><li itemprop="name"><a href="https://htmlacademy.ru/courses" itemprop="url">Тренажёры</a></li><li itemprop="name"><a href="https://htmlacademy.ru/pricing" itemprop="url">Подписка</a></li><li itemprop="name"><a href="https://l.htmlacademy.ru/corporate">Для команд и&nbsp;компаний</a></li><li itemprop="name"><a href="https://htmlacademy.ru/tutorial/php" itemprop="url">Учебник по&nbsp;PHP</a></li></ul></div><div class="page-footer__item page-footer__item--professions"><h3 class="page-footer__header">Профессии</h3><ul class="page-footer__list"><li itemprop="name"><a href="https://htmlacademy.ru/profession/frontender" itemprop="url">Фронтенд-разработчик</a></li><li itemprop="name"><a href="https://htmlacademy.ru/profession/react" itemprop="url">React-разработчик</a></li><li itemprop="name"><a href="https://htmlacademy.ru/profession/fullstack" itemprop="url">Фулстек-разработчик</a></li><li itemprop="name"><a href="https://htmlacademy.ru/profession/backender" itemprop="url">Бэкенд-разработчик</a></li></ul></div><div class="page-footer__item page-footer__item--intensives"><a class="page-footer__header" href="https://htmlacademy.ru/intensive">Курсы</a><ul class="page-footer__list"><li class="page-footer__inner-item" itemprop="name"><a href="https://htmlacademy.ru/intensive/htmlcss" itemprop="url">HTML и&nbsp;CSS.<br> Профессиональная вёрстка сайтов</a></li><li class="page-footer__inner-item page-footer__inner-item--divider" itemprop="name"><a href="https://htmlacademy.ru/intensive/adaptive" itemprop="url">HTML и&nbsp;CSS.<br> Адаптивная вёрстка и&nbsp;автоматизация</a></li><li class="page-footer__inner-item" itemprop="name"><a href="https://htmlacademy.ru/intensive/javascript" itemprop="url">JavaScript.<br> Профессиональная разработка веб-интерфейсов</a></li><li class="page-footer__inner-item" itemprop="name"><a href="https://htmlacademy.ru/intensive/ecmascript" itemprop="url">JavaScript.<br> Архитектура клиентских приложений</a></li><li class="page-footer__inner-item page-footer__inner-item--divider" itemprop="name"><a href="https://htmlacademy.ru/intensive/react" itemprop="url">React.<br> Разработка сложных клиентских приложений</a></li><li class="page-footer__inner-item" itemprop="name"><a href="https://htmlacademy.ru/intensive/php" itemprop="url">PHP.<br> Профессиональная веб-разработка</a></li><li class="page-footer__inner-item page-footer__inner-item--divider" itemprop="name"><a href="https://htmlacademy.ru/intensive/php2" itemprop="url">PHP и&nbsp;Yii.<br> Архитектура сложных веб-сервисов</a></li><li class="page-footer__inner-item" itemprop="name"><a href="https://htmlacademy.ru/intensive/nodejs" itemprop="url">Node.js.<br> Разработка серверов приложений и&nbsp;API</a></li><li class="page-footer__inner-item" itemprop="name"><a href="https://htmlacademy.ru/intensive/animation" itemprop="url">Анимация для фронтендеров</a></li><li class="page-footer__inner-item" itemprop="name"><a href="https://htmlacademy.ru/intensive/email" itemprop="url">Вёрстка email-рассылок</a></li><li class="page-footer__inner-item" itemprop="name"><a href="https://levelup.htmlacademy.ru/vue" itemprop="url">Vue.js для опытных разработчиков</a></li><li class="page-footer__inner-item" itemprop="name"><a href="https://levelup.htmlacademy.ru/regular-expressions" itemprop="url">Регулярные выражения для фронтендеров</a></li><li class="page-footer__inner-item" itemprop="name"><a href="https://levelup.htmlacademy.ru/template-engine" itemprop="url">Шаблонизаторы HTML</a></li><li class="page-footer__inner-item" itemprop="name"><a href="https://levelup.htmlacademy.ru/algorithms" itemprop="url">Алгоритмы и&nbsp;структуры данных</a></li><li class="page-footer__inner-item" itemprop="name"><a href="https://l.htmlacademy.ru/anatomy-of-cascade" itemprop="url">Анатомия CSS-каскада</a></li></ul></div><div class="page-footer__item page-footer__item--blog"><a class="page-footer__header" href="https://htmlacademy.ru/blog">Блог</a><ul class="page-footer__list"><li itemprop="name"><a href="https://htmlacademy.ru/blog/education" itemprop="url">С&nbsp;чего начать</a></li><li itemprop="name"><a href="https://htmlacademy.ru/blog/boost" itemprop="url">Шпаргалки для разработчиков</a></li><li itemprop="name"><a href="https://htmlacademy.ru/blog/academy/course" itemprop="url">Отчеты о&nbsp;курсах</a></li></ul></div><div class="page-footer__item page-footer__item--information"><h3 class="page-footer__header">Информация</h3><ul class="page-footer__list"><li itemprop="name"><a href="https://htmlacademy.ru/about" itemprop="url">Об&nbsp;Академии</a></li><li itemprop="name"><a href="https://l.htmlacademy.ru/graduates" itemprop="url">О центре карьеры</a></li></ul></div><div class="page-footer__item page-footer__item--services"><h3 class="page-footer__header">Услуги</h3><ul class="page-footer__list"><li itemprop="name"><a href="https://htmlacademy.ru/tutors" itemprop="url">Работа наставником</a></li><li itemprop="name"><a href="https://htmlacademy.ru/for_schools" itemprop="url">Для учителей</a></li><li itemprop="name"><a href="https://levelup.htmlacademy.ru/authors" itemprop="url">Стать автором</a></li></ul></div><div class="page-footer__item page-footer__item--others"><h3 class="page-footer__header">Остальное</h3><ul class="page-footer__list"><li itemprop="name"><a href="https://htmlacademy.ru/contacts" itemprop="url">Написать нам</a></li><li itemprop="name"><a href="https://htmlacademy.ru/events" itemprop="url">Мероприятия</a></li><li itemprop="name"><a href="http://forum.academy/" itemprop="url">Форум</a></li></ul></div></div><p class="page-footer__bottom" role="contentinfo"><span class="page-footer__bottom-links"><a href="https://htmlacademy.ru/docs/agreement">Соглашение</a><a href="https://htmlacademy.ru/docs/privacy">Конфиденциальность</a><a href="https://htmlacademy.ru/docs/edu">Сведения об&nbsp;образовательной организации</a><a href="https://htmlacademy.ru/docs/license">Лицензия №&nbsp;3026</a><a class="page-footer__sk page-footer__sk--mobile" href="https://sk.ru/" target="_blank" rel="noopener nofollow" aria-label="Инновационный центр Сколково"><svg width="167" height="120" viewBox="0 0 167 120" fill="none" xmlns="http://www.w3.org/2000/svg"><path clip-rule="evenodd" d="M5 115h157V5H5zM0 0h167v120H0zm56.77 73.37c-5.26 3.84-12.31 4.34-15.17 4.34v-.02c-19.89 0-23.36-11.52-23.36-18.31h11c0 3.09 1.66 8.89 11.61 8.89 5.46 0 11.46-1.35 11.46-7.08 0-4.29-4.19-5.35-10-6.78l-11-2.71c-7.76-1.88-12.21-6.49-12.21-14.77 0-6.03 3.3-16.81 21-16.81 8.18 0 13.43 2.63 16.67 6.11v-4.68h10.67v29.54l13.4-15.38h13L79.59 51.39l14.62 24.87H81.47l-9.65-17.4-4.43 4.59v12.83H56.77zM35.51 41.82l13.33 3.25v-.04a30.67 30.67 0 017.93 3v-10.2h-6.35c-.29-2.49-1.2-8.29-11.15-8.29-4.37 0-9.57 1.66-9.57 6.56 0 4.28 3.54 5.19 5.81 5.72zm-13.98 53.6a5.092 5.092 0 01-1.91-.41l.03 3.41c.708.26 1.456.395 2.21.4 2.9 0 4.32-1.42 6-5.11l6.08-13.37H29.7l-4 9.54-4.1-9.54h-4.39l5.31 11.19a5.805 5.805 0 01.84 2.34 1.605 1.605 0 01-.569 1.184 1.615 1.615 0 01-1.261.366zm20.62-10.1h3.59v13.12h-3.59v-5.16a18.856 18.856 0 01-4.2.59c-2.89 0-4.4-1.76-4.4-4.55v-4h3.59v3.26c0 1.9.41 2.57 2 2.57a16.253 16.253 0 003-.39zm14.42 11.85c.01.434.094.864.25 1.27l3.66-.04a8.9 8.9 0 01-.46-3.56v-5.67c0-3.66-3.07-4.27-5.72-4.27-3.79 0-5.87 1.5-6.07 4.42h3.38c.25-1.5.99-2 2.59-2 1.6 0 2.37.68 2.37 1.75 0 1.07-.87 1.27-3.21 1.58-2.59.33-5.72.74-5.72 4.17 0 2.5 1.78 4 4.68 4a5.998 5.998 0 004.25-1.65zm-2.724-4.436L54 92.71l.01.04a7.126 7.126 0 002.54-.69v1.48c0 1.92-1.32 2.92-3.2 2.92-1.26 0-2-.66-2-1.75 0-1.583 1.287-1.785 2.495-1.976zM68.87 98.77c-4 0-6.69-2.69-6.69-6.79s2.67-7 6.74-7c3.51 0 5.85 1.91 6.15 5h-3.53a2.479 2.479 0 00-2.59-2.26c-2 0-3.13 1.57-3.13 4.27 0 2.7 1.12 4.12 3 4.12 1.55 0 2.52-.92 2.8-2.65h3.48a5.86 5.86 0 01-6.28 5.39zm14.47-.33V88.09h4.32v-2.77H75.43v2.77h4.32v10.35zm14.39 0v-5.52h-5.06v5.52h-3.59V85.32h3.59v4.76h5.06v-4.76h3.58v13.12zm14.97-8.88v8.88h3.46V85.32h-4.09l-4.68 8.87v-8.87h-3.46v13.12h4.1zm15.05 8.88l-3.78-5.64-1.61 1.62v4.02h-3.53V85.32h3.53v5.19l4.81-5.19h4.24l-5.08 5.09 5.8 8.03z" fill-rule="evenodd"></path></svg></a></span><span class="page-footer__copyright">© ООО «Интерактивные обучающие технологии», 2013−2022</span><span class="page-footer__way-of-love"><a href="https://github.com/htmlacademy" target="_blank" rel="noopener nofollow" aria-label="Наш профиль на Github"><svg width="91" height="16" viewBox="0 0 91 16" xmlns="http://www.w3.org/2000/svg"><path fill="#fff" d="M4.5 4.2L.3 8.4l4.2 4.3c.4.4 1 .4 1.4 0 .4-.4.4-1 0-1.4L3.2 8.6l-.8.5 3.5-3.5c.2-.2.3-.4.3-.7 0-.3-.1-.5-.3-.7-.4-.4-1-.4-1.4 0zm11.6 0l4.2 4.3-4.2 4.3c-.4.4-1 .4-1.4 0-.4-.4-.4-1 0-1.4l2.7-2.7.8.5-3.5-3.5c-.2-.2-.3-.4-.3-.7 0-.3.1-.5.3-.7.4-.5 1-.5 1.4-.1zm-7.8 8.7c.5.2 1.1 0 1.3-.5l3.1-7.1c.1-.3.1-.5 0-.8-.1-.2-.3-.4-.5-.6-.5-.2-1.1 0-1.3.5l-3.1 7.1c-.1.3-.1.5 0 .8.1.3.3.5.5.6"></path><path fill="#9696a2" d="M34.35 8.353l-4.048-3.89-1.02 1.152 2.185 1.923h-5.2v1.69h5.2l-2.185 1.923 1.02 1.152 4.05-3.89zM65.037 8.353l-4.05-3.89-1.02 1.152 2.186 1.923h-5.2v1.69h5.2l-2.185 1.923 1.02 1.152 4.05-3.89z"></path><path fill="#e84e1b" d="M45.586 13.483l-5-5v-3l3-2 2 2 2-2 3 2v3z"></path><path fill="#fff" d="M89.597 8.962v1h-2v-1h1l-1-2 1-2h-1v-3h-1v1h-1v1h1v1h-1l-1 2 1 2h1v1h-5v-1h2l-1-3 1-2h-2v-3h-1v1h-1v1h1v1h-1l-1 2 1 3h1v1h-3v-8h-1v1h-1v1h1v1h-1l-1 2 1 2h1v1h-2l-2-2v1l3 4h12l3-4h-1zm-12 3h-1v-1h1v1zm3 0h-1v-1h1v1zm3 0h-1v-1h1v1zm3 0h-1v-1h1v1z"></path></svg></a></span></p></div></footer><div class="modal"><div class="modal__inner"><div class="modal__wrapper text-center js-achievements"><button class="modal__close icon-close" type="button" title="Закрыть" data-modal="close"></button></div></div></div><script async="" src="./Разметка рецепта — Разметка текста — HTML Academy_files/general.v221.js.Без названия" data-assets="https://assets.htmlacademy.ru" data-require="modal,achievements,leadgen,form,mailcheck"></script><script async="" src="./Разметка рецепта — Разметка текста — HTML Academy_files/performance.v67.js.Без названия"></script><script async="" id="ha-stats-script" src="./Разметка рецепта — Разметка текста — HTML Academy_files/stats.v92.js.Без названия" data-start-time="1649236534" data-api-url="https://s.tml.io/collect" data-min-events-cnt="5" data-min-send-time="10" data-token="eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJhbGciOiJIUzI1NiIsImV4cCI6MTY0OTI3ODc5OX0.5FF4AAZjFG_zyDwLcWUp3CA-avGd7gIjjdsRX5Wk-Ic" data-uniq-id="1507460910" data-user-id="2083681"></script><script>(window.Image ? (new Image()) : document.createElement('img')).src = 'https://vk.com/rtrg?p=VK-RTRG-173652-9L5mW';</script><textarea id="BFI_DATA" style="width: 1px; height: 1px; display: none;"></textarea><title> </title><div id="WidgetFloaterPanels" translate="no" style="display: none; text-align: left; direction: ltr; visibility: hidden;" class="LTRStyle"> <div id="WidgetFloater" style="display: none" onmouseover="Microsoft.Translator.OnMouseOverFloater()" onmouseout="Microsoft.Translator.OnMouseOutFloater()"> <div id="WidgetLogoPanel"> <span id="WidgetTranslateWithSpan"><span>TRANSLATE with </span><img id="FloaterLogo"></span> <span id="WidgetCloseButton" title="Exit Translation" onclick="Microsoft.Translator.FloaterOnClose()">x</span></div> <div id="LanguageMenuPanel"> <div class="DDStyle_outer"><input name="LanguageMenu_svid" type="text" id="LanguageMenu_svid" style="display:none;" autocomplete="on" value="en" onclick="this.select()"> <input name="LanguageMenu_textid" type="text" id="LanguageMenu_textid" style="display:none;" autocomplete="on" onclick="this.select()"> <span onselectstart="return false" tabindex="0" class="DDStyle" id="__LanguageMenu_header" onclick="return LanguageMenu &amp;&amp; !LanguageMenu.Show(&#39;__LanguageMenu_popup&#39;, event);" onkeydown="return LanguageMenu &amp;&amp; !LanguageMenu.Show(&#39;__LanguageMenu_popup&#39;, event);">English</span> <div style="position:relative;text-align:left;left:0;"><div style="position:absolute;width:;left:0px;"><div class="DDStyle" style="display:none;" id="__LanguageMenu_popup"> <table id="LanguageMenu" border="0"> <tbody><tr> <td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;ar&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#ar">Arabic</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;he&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#he">Hebrew</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;pl&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#pl">Polish</a></td> </tr><tr> <td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;bg&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#bg">Bulgarian</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;hi&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#hi">Hindi</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;pt&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#pt">Portuguese</a></td> </tr><tr> <td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;ca&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#ca">Catalan</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;mww&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#mww">Hmong Daw</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;ro&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#ro">Romanian</a></td> </tr><tr> <td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;zh-CHS&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#zh-CHS">Chinese Simplified</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;hu&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#hu">Hungarian</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;ru&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#ru">Russian</a></td> </tr><tr> <td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;zh-CHT&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#zh-CHT">Chinese Traditional</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;id&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#id">Indonesian</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;sk&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#sk">Slovak</a></td> </tr><tr> <td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;cs&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#cs">Czech</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;it&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#it">Italian</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;sl&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#sl">Slovenian</a></td> </tr><tr> <td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;da&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#da">Danish</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;ja&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#ja">Japanese</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;es&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#es">Spanish</a></td> </tr><tr> <td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;nl&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#nl">Dutch</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;tlh&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#tlh">Klingon</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;sv&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#sv">Swedish</a></td> </tr><tr> <td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;en&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#en">English</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;ko&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#ko">Korean</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;th&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#th">Thai</a></td> </tr><tr> <td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;et&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#et">Estonian</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;lv&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#lv">Latvian</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;tr&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#tr">Turkish</a></td> </tr><tr> <td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;fi&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#fi">Finnish</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;lt&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#lt">Lithuanian</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;uk&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#uk">Ukrainian</a></td> </tr><tr> <td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;fr&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#fr">French</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;ms&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#ms">Malay</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;ur&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#ur">Urdu</a></td> </tr><tr> <td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;de&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#de">German</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;mt&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#mt">Maltese</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;vi&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#vi">Vietnamese</a></td> </tr><tr> <td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;el&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#el">Greek</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;no&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#no">Norwegian</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;cy&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#cy">Welsh</a></td> </tr><tr> <td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;ht&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#ht">Haitian Creole</a></td><td><a tabindex="-1" onclick="return LanguageMenu.onclick(&#39;fa&#39;);" ondragstart="LanguageMenu.ondragstart(event);" href="https://htmlacademy.ru/courses/301/challenge/2#fa">Persian</a></td><td></td> </tr> </tbody></table> <img alt="" style="height:7px;width:17px;border-width:0px;left:20px;"> </div></div></div></div> <script type="text/javascript"> var LanguageMenu; var LanguageMenu_keys=["ar","bg","ca","zh-CHS","zh-CHT","cs","da","nl","en","et","fi","fr","de","el","ht","he","hi","mww","hu","id","it","ja","tlh","ko","lv","lt","ms","mt","no","fa","pl","pt","ro","ru","sk","sl","es","sv","th","tr","uk","ur","vi","cy"]; var LanguageMenu_values=["Arabic","Bulgarian","Catalan","Chinese Simplified","Chinese Traditional","Czech","Danish","Dutch","English","Estonian","Finnish","French","German","Greek","Haitian Creole","Hebrew","Hindi","Hmong Daw","Hungarian","Indonesian","Italian","Japanese","Klingon","Korean","Latvian","Lithuanian","Malay","Maltese","Norwegian","Persian","Polish","Portuguese","Romanian","Russian","Slovak","Slovenian","Spanish","Swedish","Thai","Turkish","Ukrainian","Urdu","Vietnamese","Welsh"]; var LanguageMenu_callback=function(){ }; var LanguageMenu_popupid='__LanguageMenu_popup'; </script> </div> <div id="CTFLinksPanel"> <span id="ExternalLinksPanel"><a id="HelpLink" title="Help" target="_blank" href="https://go.microsoft.com/?linkid=9722454"> <img id="HelpImg"></a> <a id="EmbedLink" href="javascript:Microsoft.Translator.FloaterShowEmbed()" title="Get this widget for your own site"> <img id="EmbedImg"></a> <a id="ShareLink" title="Share translated page with friends" href="javascript:Microsoft.Translator.FloaterShowSharePanel()"> <img id="ShareImg"></a> </span> </div> <div id="FloaterProgressBar"> <span id="ProgressFill"></span> </div> </div> <div id="WidgetFloaterCollapsed" style="display: none" onmouseover="Microsoft.Translator.OnMouseOverFloater()"> <span>TRANSLATE with </span><img id="CollapsedLogoImg"></div> <div id="FloaterSharePanel" style="display: none"> <div id="ShareTextDiv"> <span id="ShareTextSpan"> COPY THE URL BELOW </span> </div> <div id="ShareTextboxDiv"> <input name="ShareTextbox" type="text" id="ShareTextbox" readonly="readonly" onclick="this.select()"> <!--a id="TwitterLink" title="Share on Twitter"> <img id="TwitterImg" /></a> <a-- id="FacebookLink" title="Share on Facebook"> <img id="FacebookImg" /></a--> <a id="EmailLink" title="Email this translation"> <img id="EmailImg"></a> </div> <div id="ShareFooter"> <span id="ShareHelpSpan"><a id="ShareHelpLink"> <img id="ShareHelpImg"></a></span> <span id="ShareBackSpan"><a id="ShareBack" href="javascript:Microsoft.Translator.FloaterOnShareBackClick()" title="Back To Translation"> Back</a></span> </div> <input name="EmailSubject" type="hidden" id="EmailSubject" value="Check out this page in {0} translated from {1}"> <input name="EmailBody" type="hidden" id="EmailBody" value="Translated: {0}%0d%0aOriginal: {1}%0d%0a%0d%0aAutomatic translation powered by Microsoft® Translator%0d%0ahttp://www.bing.com/translator?ref=MSTWidget"> <input type="hidden" id="ShareHelpText" value="This link allows visitors to launch this page and automatically translate it to {0}."> </div> <div id="FloaterEmbed" style="display: none"> <div id="EmbedTextDiv"> <span id="EmbedTextSpan">EMBED THE SNIPPET BELOW IN YOUR SITE</span> <a id="EmbedHelpLink" title="Copy this code and place it into your HTML."> <img id="EmbedHelpImg"></a> </div> <div id="EmbedTextboxDiv"> <input name="EmbedSnippetTextBox" type="text" id="EmbedSnippetTextBox" readonly="readonly" value="&lt;div id=&#39;MicrosoftTranslatorWidget&#39; class=&#39;Dark&#39; style=&#39;color:white;background-color:#555555&#39;&gt;&lt;/div&gt;&lt;script type=&#39;text/javascript&#39;&gt;setTimeout(function(){var s=document.createElement(&#39;script&#39;);s.type=&#39;text/javascript&#39;;s.charset=&#39;UTF-8&#39;;s.src=((location &amp;&amp; location.href &amp;&amp; location.href.indexOf(&#39;https&#39;) == 0)?&#39;https://ssl.microsofttranslator.com&#39;:&#39;http://www.microsofttranslator.com&#39;)+&#39;/ajax/v3/WidgetV3.ashx?siteData=ueOIGRSKkd965FeEGM5JtQ**&amp;ctf=true&amp;ui=true&amp;settings=manual&amp;from=en&#39;;var p=document.getElementsByTagName(&#39;head&#39;)[0]||document.documentElement;p.insertBefore(s,p.firstChild); },0);&lt;/script&gt;" onclick="this.select()"> </div> <div id="EmbedNoticeDiv"><span id="EmbedNoticeSpan">Enable collaborative features and customize widget: <a href="http://www.bing.com/widget/translator" target="_blank">Bing Webmaster Portal</a></span></div> <div id="EmbedFooterDiv"><span id="EmbedBackSpan"><a href="javascript:Microsoft.Translator.FloaterOnEmbedBackClick()" title="Back To Translation">Back</a></span></div> </div> <script type="text/javascript"> var intervalId = setInterval(function () { if (MtPopUpList) { LanguageMenu = new MtPopUpList(); var langMenu = document.getElementById(LanguageMenu_popupid); var origLangDiv = document.createElement("div"); origLangDiv.id = "OriginalLanguageDiv"; origLangDiv.innerHTML = "<span id='OriginalTextSpan'>ORIGINAL: </span><span id='OriginalLanguageSpan'></span>"; langMenu.appendChild(origLangDiv); LanguageMenu.Init('LanguageMenu', LanguageMenu_keys, LanguageMenu_values, LanguageMenu_callback, LanguageMenu_popupid); window["LanguageMenu"] = LanguageMenu; clearInterval(intervalId); } }, 1); </script> </div></body></html>
